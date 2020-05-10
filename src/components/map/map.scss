@@ -1,0 +1,35 @@
+.wrapper-maps {
+  .title-schedule {
+    margin: 100px auto 20px auto;
+    color: #010101;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Noto Sans";
+    text-align: center;
+  }
+  .desc {
+    color: #9a9a9a;
+    font-size: 18px;
+    font-family: "Noto Sans";
+    text-align: center;
+    margin: 20px 20px 60px 20px;
+  }
+  .wrapper-input {
+    padding: 0px 20px;
+    box-sizing: border-box;
+    .css-26l3qy-menu {
+      z-index: 10 !important;
+    }
+  }
+}
+
+.wrapper-skeleton {
+  padding: 20px;
+}
+
+.leaflet-container {
+  height: 400px !important;
+  width: 90% !important;
+  margin: 30px auto;
+  z-index: 1 !important;
+}

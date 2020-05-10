@@ -1,0 +1,31 @@
+.wrapper-schedules {
+  .title-schedule {
+    margin: 100px auto 0px auto;
+    color: #010101;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Noto Sans";
+    text-align: center;
+  }
+  .desc {
+    color: #9a9a9a;
+    font-size: 18px;
+    font-family: "Noto Sans";
+    text-align: center;
+    margin: 20px 20px 60px 20px;
+  }
+  .text-region-iftar {
+    font-size: 20px;
+    font-family: "Noto Sans";
+    text-align: center;
+    margin: 0px 0px 20px 0px;
+  }
+  .table {
+    margin: 0px 0px 60px 0px;
+    @media (max-width: 600px) {
+      overflow: auto;
+      white-space: nowrap;
+      background: white;
+    }
+  }
+}

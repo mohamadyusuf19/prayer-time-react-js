@@ -1,0 +1,37 @@
+.layout {
+  margin: auto;
+  border: solid 1px#f6f7f9;
+  box-sizing: border-box;
+  background: #f6f7f9;
+  .header {
+    background: grey;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+  .footer {
+    background: grey;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 12px;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    width: 450px;
+    .icon {
+      text-align: center;
+      color: #fff;
+    }
+    .active-icon {
+      color: #010101;
+    }
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+  @media (min-width: 600px) {
+    width: 450px;
+  }
+}
