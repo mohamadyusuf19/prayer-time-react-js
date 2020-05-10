@@ -20,9 +20,6 @@ const HomeContainer = () => {
             : context.state.data.filter(
                 (item) => item.date.gregorian.date === formatDate
               );
-          const getDay = isEmpty(newData)
-            ? null
-            : moment(newData[0].date.gregorian.date).day() - 1;
           if (context.state.loading)
             return (
               <Home
@@ -39,8 +36,10 @@ const HomeContainer = () => {
               ashar={newData[0].timings.Asr}
               magrib={newData[0].timings.Maghrib}
               isya={newData[0].timings.Isha}
-              date={`${formatDay()[getDay]}, ${newData[0].date.readable}`}
-              dateRamadhan={`${newData[0].date.hijri.day} ${newData[0].date.hijri.month.en} ${newData[0].date.hijri.year}`}
+              date={`${formatDay(newData[0].date.gregorian.weekday.en)}, ${
+                newData[0].date.readable
+              } M`}
+              dateRamadhan={`${newData[0].date.hijri.day} ${newData[0].date.hijri.month.en} ${newData[0].date.hijri.year} H`}
             />
           );
         }}

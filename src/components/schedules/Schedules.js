@@ -1,76 +1,9 @@
 import React from "react";
-import { Table } from "antd";
-import moment from "moment";
 
 import "./schedules.scss";
 import { FaMapMarker } from "react-icons/fa";
 import Skeleton from "react-loading-skeleton";
-
-const date = new Date();
-const formatDate = moment(date).format("DD-MM-YYYY");
-const borderText = (params) =>
-  params === formatDate ? { color: "#000", fontWeight: "bold" } : null;
-
-const columns = [
-  {
-    title: "Tanggal",
-    dataIndex: "date",
-    key: `date.timestamp`,
-    render: (text, record) => {
-      return (
-        <p style={borderText(record.date.gregorian.date)}>{text.readable}</p>
-      );
-    },
-  },
-  {
-    title: "Subuh",
-    dataIndex: "timings",
-    key: `date.timestamp`,
-    render: (text, record) => {
-      return <p style={borderText(record.date.gregorian.date)}>{text.Fajr}</p>;
-    },
-  },
-  {
-    title: "Zuhur",
-    dataIndex: "timings",
-    key: `date.timestamp`,
-    render: (text, record) => {
-      return <p style={borderText(record.date.gregorian.date)}>{text.Dhuhr}</p>;
-    },
-  },
-  {
-    title: "Ashar",
-    dataIndex: "timings",
-    key: `date.timestamp`,
-    render: (text, record) => {
-      return <p style={borderText(record.date.gregorian.date)}>{text.Asr}</p>;
-    },
-  },
-  {
-    title: "Magrib",
-    dataIndex: "timings",
-    key: `date.timestamp`,
-    render: (text, record) => {
-      return (
-        <p style={borderText(record.date.gregorian.date)}>{text.Maghrib}</p>
-      );
-    },
-  },
-  {
-    title: "Isya'",
-    dataIndex: "timings",
-    key: `date.timestamp`,
-    render: (text, record) => {
-      return (
-        <p
-          style={borderText(record.date.gregorian.date)}
-          key={record.date.timestamp}>
-          {text.Isha}
-        </p>
-      );
-    },
-  },
-];
+import TableManual from "../table/Table";
 
 const Schedules = ({ dataSource, region, loading }) => {
   return (
@@ -86,12 +19,7 @@ const Schedules = ({ dataSource, region, loading }) => {
         <Skeleton width={"100%"} height={400} />
       ) : (
         <div className='table'>
-          <Table
-            columns={columns}
-            bordered
-            dataSource={dataSource}
-            pagination={false}
-          />
+          <TableManual data={dataSource} />
         </div>
       )}
     </div>

@@ -1,0 +1,13 @@
+.table-manual {
+  border-collapse: collapse;
+  width: 100%;
+  td,
+  th {
+    border: 1px solid #dddddd;
+    height: 50px;
+    text-align: center;
+    font-size: 11px;
+    overflow-x: auto;
+    padding: 3px;
+  }
+}
