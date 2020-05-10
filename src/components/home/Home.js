@@ -1,8 +1,11 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import { FaMapMarker } from "react-icons/fa";
 
 import "./home.scss";
+
+const mosqueIcon = require("../../assets/mosque.png");
 
 const Home = ({
   subuh,
@@ -15,6 +18,7 @@ const Home = ({
   region,
   loading,
 }) => {
+  const history = useHistory();
   return (
     <div className='wrapper-home'>
       <div className='card'>
@@ -35,6 +39,11 @@ const Home = ({
         ) : (
           <p className='text-time-iftar'>{magrib}</p>
         )}
+      </div>
+      <div className='card' onClick={() => history.push("/doa-buka-puasa")}>
+        <img alt='icon' src={mosqueIcon} className='mosque' />
+        <p className='text-title-iftar'>Lupa doa berbuka puasa ?</p>
+        <p className='text-region-iftar'>Yuk hafalin</p>
       </div>
       <p className='title-schedule'>Jadwal Sholat</p>
       <p className='desc'>

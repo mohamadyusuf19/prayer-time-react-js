@@ -4,6 +4,7 @@ import HomeContainer from "../container/HomeContainer";
 import MapContainer from "../container/MapContainer";
 import ScheduleContainer from "../container/ScheduleContainer";
 import AccountContainer from "../container/AccountContainer";
+import DoaBerbukaContainer from "../container/DoaBerbukaContainer";
 
 const Routes = () => {
   return (
@@ -13,6 +14,7 @@ const Routes = () => {
         <Route path='/maps' component={MapContainer} />
         <Route path='/schedules' component={ScheduleContainer} />
         <Route path='/account' component={AccountContainer} />
+        <Route path='/doa-buka-puasa' component={DoaBerbukaContainer} />
       </Switch>
     </Router>
   );
