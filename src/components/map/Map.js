@@ -7,12 +7,22 @@ import "./map.scss";
 import Skeleton from "react-loading-skeleton";
 
 const Map = (props) => {
-  const { loading } = props;
+  const { loading, onChangeProvince, valueProvince, dataProvince } = props;
   return (
     <>
       <div className='wrapper-maps'>
         <p className='title-schedule'>Cari Daerahmu</p>
-        <p className='desc'>Pastikan daerahmu terdaftar di aplikasi</p>
+        <p className='desc'>
+          Alhamdulillah semua daerah kabupaten/kota se-Indonesia bisa dicari
+        </p>
+        <div className='wrapper-input'>
+          <Input
+            onChange={onChangeProvince}
+            value={valueProvince}
+            data={dataProvince}
+            placeholder='Pilih Provinsi'
+          />
+        </div>
         <div className='wrapper-input'>
           <Input {...props} />
         </div>
@@ -22,7 +32,7 @@ const Map = (props) => {
           <Skeleton height={400} width={"100%"} />
         </div>
       ) : (
-        <DetailMaps {...props} />
+        <DetailMaps {...props} placeholder='Pilih Kota' />
       )}
     </>
   );

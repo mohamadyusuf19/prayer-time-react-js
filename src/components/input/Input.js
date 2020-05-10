@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 
 import AsyncSelect from "react-select/async";
-import { dataRegion } from "../../data/Region";
 
-const Input = ({ onChange, value }) => {
+const Input = ({ onChange, value, data, placeholder }) => {
   const [inputValue, setInputValue] = useState("");
 
   const filterData = (inputValue) => {
-    return dataRegion.filter((i) =>
+    return data.filter((i) =>
       i.label.toLowerCase().includes(inputValue.toLowerCase())
     );
   };
@@ -27,12 +26,12 @@ const Input = ({ onChange, value }) => {
     <AsyncSelect
       cacheOptions
       loadOptions={loadOptions}
-      defaultOptions={dataRegion}
+      defaultOptions={data}
       onInputChange={handleInputChange}
       isClearable={true}
       onChange={onChange}
       value={value}
-      placeholder='Pilih Kotamu'
+      placeholder={placeholder}
     />
   );
 };

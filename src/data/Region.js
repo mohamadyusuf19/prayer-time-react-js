@@ -1,7 +1,7 @@
 export const dataRegion = [
   {
-    value: "Nganjuk",
-    label: "Nganjuk",
+    value: "Kab.Nganjuk",
+    label: "Kab.Nganjuk",
   },
   {
     value: "Kediri",

@@ -13,6 +13,7 @@ const ScheduleContainer = () => {
             <Schedules
               dataSource={context.state.data}
               region={context.state.region.label}
+              loading={context.state.loading}
             />
           );
         }}

@@ -4,6 +4,7 @@ import moment from "moment";
 
 import "./schedules.scss";
 import { FaMapMarker } from "react-icons/fa";
+import Skeleton from "react-loading-skeleton";
 
 const date = new Date();
 const formatDate = moment(date).format("DD-MM-YYYY");
@@ -71,7 +72,7 @@ const columns = [
   },
 ];
 
-const Schedules = ({ dataSource, region }) => {
+const Schedules = ({ dataSource, region, loading }) => {
   return (
     <div className='wrapper-schedules'>
       <p className='title-schedule'>Jadwal Sholat</p>
@@ -81,14 +82,18 @@ const Schedules = ({ dataSource, region }) => {
       <p className='desc'>
         Jangan sampai dehidrasi membuat anda lupa waktu sholat ya
       </p>
-      <div className='table'>
-        <Table
-          columns={columns}
-          bordered
-          dataSource={dataSource}
-          pagination={false}
-        />
-      </div>
+      {loading ? (
+        <Skeleton width={"100%"} height={400} />
+      ) : (
+        <div className='table'>
+          <Table
+            columns={columns}
+            bordered
+            dataSource={dataSource}
+            pagination={false}
+          />
+        </div>
+      )}
     </div>
   );
 };
