@@ -10,6 +10,13 @@
   .text-arabic {
     color: #000;
     font-size: 18px;
+    font-family: "Noto Sans";
+    text-align: center;
+    margin: 20px 20px;
+  }
+  .text-latin {
+    color: #000;
+    font-size: 18px;
     font-weight: 600;
     font-family: "Noto Sans";
     text-align: center;
@@ -23,12 +30,7 @@
     margin: 20px 20px 60px 20px;
   }
   .doa {
-    background: url("../../assets/doa.jpg") no-repeat center center;
-    height: 120px;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    margin: 20px 30px;
+    height: 150px;
+    margin: 20px auto;
   }
 }
