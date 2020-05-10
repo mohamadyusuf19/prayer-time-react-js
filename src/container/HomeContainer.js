@@ -8,6 +8,7 @@ import Home from "../components/home/Home";
 import { formatDay } from "../utils/FormatDate";
 
 const HomeContainer = () => {
+  window.scrollTo(0, 0);
   const date = new Date();
   const formatDate = moment(date).format("DD-MM-YYYY");
   return (

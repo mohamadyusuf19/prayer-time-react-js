@@ -4,6 +4,7 @@ import Schedules from "../components/schedules/Schedules";
 import { SchedulesConsumer } from "../context/schedulesPrayerContext";
 
 const ScheduleContainer = () => {
+  window.scrollTo(0, 0);
   return (
     <Layout>
       <SchedulesConsumer>

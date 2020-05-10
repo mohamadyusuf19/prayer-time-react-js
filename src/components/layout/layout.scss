@@ -19,13 +19,17 @@
     box-sizing: border-box;
     position: fixed;
     bottom: 0;
-    width: 450px;
+    width: 100%;
+    z-index: 10;
     .icon {
       text-align: center;
       color: #fff;
     }
     .active-icon {
       color: #010101;
+    }
+    @media (min-width: 600px) {
+      width: 450px;
     }
   }
   @media (max-width: 600px) {

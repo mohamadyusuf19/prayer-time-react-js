@@ -5,6 +5,7 @@ import { SchedulesConsumer } from "../context/schedulesPrayerContext";
 import { getSchedulesPrayer } from "../services/FetchSchedules";
 
 const MapContainer = () => {
+  window.scrollTo(0, 0);
   return (
     <Layout>
       <SchedulesConsumer>
