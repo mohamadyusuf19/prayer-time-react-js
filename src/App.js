@@ -40,10 +40,11 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   useEffect(() => {
     const region = isEmpty(localStorage.getItem("region"))
-      ? localStorage.setItem("region", JSON.stringify(state.region))
-      : localStorage.getItem("region");
+      ? localStorage.setItem("region", JSON.stringify(state.region)) ||
+        state.region
+      : JSON.parse(localStorage.getItem("region"));
     dispatch({ type: "SET_LOADING", payload: true });
-    getSchedulesPrayer(region)
+    getSchedulesPrayer(region.value)
       .then((res) => {
         dispatch({ type: "GET_DATA", payload: res });
         dispatch({ type: "SET_LOADING", payload: false });
