@@ -23,11 +23,11 @@ const Home = ({
           <FaMapMarker /> {region}
         </p>
         {loading ? (
-          <Skeleton count={1} />
+          <Skeleton count={2} />
         ) : (
-          <div className='wrapper-date-iftar'>
+          <div>
+            <p className='text-date-iftar-hijri'>{dateRamadhan}</p>
             <p className='text-date-iftar'>{date}</p>
-            <p className='text-date-iftar'>{dateRamadhan}</p>
           </div>
         )}
         {loading ? (
