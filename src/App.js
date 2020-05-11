@@ -3,7 +3,11 @@ import Routes from "./routes/Routes";
 import { getSchedulesPrayer } from "./services/FetchSchedules";
 import { SchedulesProvider } from "./context/schedulesPrayerContext";
 import isEmpty from "lodash/isEmpty";
-import { fetchRegion, fetchProvince } from "./services/FetchRegion";
+import {
+  fetchRegion,
+  fetchProvince,
+  fetchUnicode,
+} from "./services/FetchRegion";
 
 const initialState = {
   data: [],
@@ -28,6 +32,7 @@ const initialState = {
     : JSON.parse(localStorage.getItem("map")),
   dataRegion: [],
   dataProvince: [],
+  unicode: "",
 };
 
 const reducer = (state, action) => {
@@ -46,6 +51,8 @@ const reducer = (state, action) => {
       return { ...state, dataRegion: action.payload };
     case "GET_DATA_PROVINCE":
       return { ...state, dataProvince: action.payload };
+    case "GET_UNICODE":
+      return { ...state, unicode: action.payload };
     default:
       return state;
   }
@@ -54,34 +61,36 @@ const reducer = (state, action) => {
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   useEffect(() => {
-    fetchProvince()
-      .then((res) => {
-        const newData = res.map((item, i) => {
-          return {
-            value: item.id,
-            label: item.nama,
-          };
-        });
-        dispatch({ type: "GET_DATA_PROVINCE", payload: newData });
-      })
-      .catch((err) => console.log(err));
-  }, []);
-  useEffect(() => {
-    const province = isEmpty(localStorage.getItem("province"))
-      ? localStorage.setItem("province", JSON.stringify(state.province)) ||
-        state.province
-      : JSON.parse(localStorage.getItem("province"));
-    fetchRegion(province.value)
-      .then((res) => {
-        const newData = res.map((item, i) => {
-          return {
-            value: item.nama,
-            label: item.nama,
-          };
-        });
-        dispatch({ type: "GET_DATA_REGION", payload: newData });
-      })
-      .catch((err) => console.log(err));
+    fetchUnicode().then((unicode) => {
+      dispatch({ type: "GET_UNICODE", payload: unicode });
+      const province = isEmpty(localStorage.getItem("province"))
+        ? localStorage.setItem("province", JSON.stringify(state.province)) ||
+          state.province
+        : JSON.parse(localStorage.getItem("province"));
+      fetchProvince(unicode)
+        .then((res) => {
+          const newData = res.map((item, i) => {
+            return {
+              value: item.id,
+              label: item.name,
+            };
+          });
+          console.log("newData", newData);
+          dispatch({ type: "GET_DATA_PROVINCE", payload: newData });
+        })
+        .catch((err) => console.log(err));
+      fetchRegion(unicode, province.value)
+        .then((res) => {
+          const newData = res.map((item, i) => {
+            return {
+              value: item.name,
+              label: item.name,
+            };
+          });
+          dispatch({ type: "GET_DATA_REGION", payload: newData });
+        })
+        .catch((err) => console.log(err));
+    });
   }, []);
   useEffect(() => {
     const region = isEmpty(localStorage.getItem("region"))

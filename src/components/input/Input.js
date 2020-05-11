@@ -28,7 +28,6 @@ const Input = ({ onChange, value, data, placeholder }) => {
       loadOptions={loadOptions}
       defaultOptions={data}
       onInputChange={handleInputChange}
-      isClearable={true}
       onChange={onChange}
       value={value}
       placeholder={placeholder}
