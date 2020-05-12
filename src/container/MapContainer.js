@@ -71,6 +71,8 @@ const MapContainer = () => {
                       longitude: res[0].meta.longitude,
                     };
                     const data = { value: "Posisi Anda", label: "Posisi Anda" };
+                    localStorage.setItem("province", JSON.stringify(data));
+                    localStorage.setItem("region", JSON.stringify(data));
                     localStorage.setItem("map", JSON.stringify(map));
                     dispatch({ type: "SET_LOADING", payload: false });
                     dispatch({ type: "GET_DATA", payload: res });
