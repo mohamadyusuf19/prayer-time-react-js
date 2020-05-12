@@ -2,7 +2,10 @@ import React from "react";
 import Layout from "../components/layout/Layout";
 import Map from "../components/map/Map";
 import { SchedulesConsumer } from "../context/schedulesPrayerContext";
-import { getSchedulesPrayer } from "../services/FetchSchedules";
+import {
+  getSchedulesPrayer,
+  getSchedulesPrayerByPosition,
+} from "../services/FetchSchedules";
 import { fetchRegion } from "../services/FetchRegion";
 
 const MapContainer = () => {
@@ -56,6 +59,33 @@ const MapContainer = () => {
               });
             });
           };
+          const onClickGetPosition = () => {
+            navigator.geolocation.getCurrentPosition(
+              function (position) {
+                dispatch({ type: "SET_LOADING", payload: true });
+                const { latitude, longitude } = position.coords;
+                getSchedulesPrayerByPosition(latitude, longitude).then(
+                  (res) => {
+                    const map = {
+                      latitude: res[0].meta.latitude,
+                      longitude: res[0].meta.longitude,
+                    };
+                    const data = { value: "Posisi Anda", label: "Posisi Anda" };
+                    localStorage.setItem("map", JSON.stringify(map));
+                    dispatch({ type: "SET_LOADING", payload: false });
+                    dispatch({ type: "GET_DATA", payload: res });
+                    dispatch({ type: "CHANGE_MAP", payload: map });
+                    dispatch({ type: "CHANGE_REGION", payload: data });
+                    dispatch({ type: "CHANGE_PROVINCE", payload: data });
+                  }
+                );
+              },
+              function (err) {
+                alert("Maaf posisi anda tidak terdeteksi");
+              },
+              { timeout: 30000, enableHighAccuracy: true, maximumAge: 75000 }
+            );
+          };
           return (
             <Map
               onChange={onChange}
@@ -67,6 +97,7 @@ const MapContainer = () => {
               onChangeProvince={onChangeProvince}
               valueProvince={context.state.province}
               dataProvince={context.state.dataProvince}
+              onClick={onClickGetPosition}
             />
           );
         }}

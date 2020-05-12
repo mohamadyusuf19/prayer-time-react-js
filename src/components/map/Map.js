@@ -27,7 +27,7 @@ const Map = (props) => {
         <div className='wrapper-input'>
           <Input {...props} />
         </div>
-        <Button />
+        <Button {...props} />
       </div>
       {loading ? (
         <div className='wrapper-skeleton'>
