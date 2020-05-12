@@ -2,6 +2,7 @@ import React from "react";
 
 import Input from "../input/Input";
 import DetailMaps from "../detailmaps/DetailMaps";
+import Button from "../button/Button";
 
 import "./map.scss";
 import Skeleton from "react-loading-skeleton";
@@ -26,6 +27,7 @@ const Map = (props) => {
         <div className='wrapper-input'>
           <Input {...props} />
         </div>
+        <Button />
       </div>
       {loading ? (
         <div className='wrapper-skeleton'>

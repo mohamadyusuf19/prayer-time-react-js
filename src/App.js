@@ -75,7 +75,6 @@ function App() {
               label: item.name,
             };
           });
-          console.log("newData", newData);
           dispatch({ type: "GET_DATA_PROVINCE", payload: newData });
         })
         .catch((err) => console.log(err));
