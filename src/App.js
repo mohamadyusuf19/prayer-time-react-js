@@ -1,6 +1,9 @@
 import React, { useEffect, useReducer } from "react";
 import Routes from "./routes/Routes";
-import { getSchedulesPrayer } from "./services/FetchSchedules";
+import {
+  getSchedulesPrayer,
+  getSchedulesPrayerByPosition,
+} from "./services/FetchSchedules";
 import { SchedulesProvider } from "./context/schedulesPrayerContext";
 import isEmpty from "lodash/isEmpty";
 import {
@@ -96,13 +99,23 @@ function App() {
       ? localStorage.setItem("region", JSON.stringify(state.region)) ||
         state.region
       : JSON.parse(localStorage.getItem("region"));
+    const { latitude, longitude } = JSON.parse(localStorage.getItem("map"));
     dispatch({ type: "SET_LOADING", payload: true });
-    getSchedulesPrayer(region.value)
-      .then((res) => {
-        dispatch({ type: "GET_DATA", payload: res });
-        dispatch({ type: "SET_LOADING", payload: false });
-      })
-      .catch((err) => console.log(err));
+    if (region.value === "Posisi Anda") {
+      getSchedulesPrayerByPosition(latitude, longitude)
+        .then((res) => {
+          dispatch({ type: "GET_DATA", payload: res });
+          dispatch({ type: "SET_LOADING", payload: false });
+        })
+        .catch((err) => console.log(err));
+    } else {
+      getSchedulesPrayer(region.value)
+        .then((res) => {
+          dispatch({ type: "GET_DATA", payload: res });
+          dispatch({ type: "SET_LOADING", payload: false });
+        })
+        .catch((err) => console.log(err));
+    }
   }, []);
   return (
     <SchedulesProvider value={{ state, dispatch }}>
