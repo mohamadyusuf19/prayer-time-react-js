@@ -5,6 +5,7 @@ import MapContainer from "../container/MapContainer";
 import ScheduleContainer from "../container/ScheduleContainer";
 import AccountContainer from "../container/AccountContainer";
 import DoaBerbukaContainer from "../container/DoaBerbukaContainer";
+import Footer from "../components/footer/Footer";
 
 const Routes = () => {
   return (
@@ -16,6 +17,7 @@ const Routes = () => {
         <Route path='/account' component={AccountContainer} />
         <Route path='/doa-buka-puasa' component={DoaBerbukaContainer} />
       </Switch>
+      <Footer />
     </Router>
   );
 };

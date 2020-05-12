@@ -11,6 +11,7 @@ import {
   fetchProvince,
   fetchUnicode,
 } from "./services/FetchRegion";
+import Footer from "./components/footer/Footer";
 
 const initialState = {
   data: [],

@@ -14,7 +14,9 @@ const Map = (props) => {
       <div className='wrapper-maps'>
         <p className='title-schedule'>Cari Daerahmu</p>
         <p className='desc'>
-          Alhamdulillah semua daerah kabupaten/kota se-Indonesia bisa dicari
+          Alhamdulillah semua daerah kabupaten/kota se-Indonesia bisa dicari.
+          menentukan waktu shalat berdasarkan lokasi yang dicari atau
+          berdasarkan posisi.
         </p>
         <div className='wrapper-input'>
           <Input

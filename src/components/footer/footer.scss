@@ -1,0 +1,33 @@
+.wrapper-footer {
+  .footer {
+    background: grey;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 12px;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+    .icon {
+      text-align: center;
+      color: #fff;
+    }
+    .active-icon {
+      color: #010101;
+    }
+    @media (min-width: 600px) {
+      width: 450px;
+    }
+    @media (max-width: 600px) {
+      left: 0;
+    }
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+  @media (min-width: 600px) {
+    width: 450px;
+    margin: auto;
+  }
+}
