@@ -16,14 +16,14 @@ const initialState = {
   data: [],
   region: isEmpty(localStorage.getItem("region"))
     ? {
-        value: "Nganjuk",
-        label: "Nganjuk",
+        value: "KABUPATEN NGANJUK",
+        label: "KABUPATEN NGANJUK",
       }
     : JSON.parse(localStorage.getItem("region")),
   province: isEmpty(localStorage.getItem("province"))
     ? {
         value: 35,
-        label: "Jawa Timur",
+        label: "JAWA TIMUR",
       }
     : JSON.parse(localStorage.getItem("province")),
   loading: false,
@@ -99,7 +99,9 @@ function App() {
       ? localStorage.setItem("region", JSON.stringify(state.region)) ||
         state.region
       : JSON.parse(localStorage.getItem("region"));
-    const { latitude, longitude } = JSON.parse(localStorage.getItem("map"));
+    const { latitude, longitude } = isEmpty(localStorage.getItem("map"))
+      ? state.map
+      : JSON.parse(localStorage.getItem("map"));
     dispatch({ type: "SET_LOADING", payload: true });
     if (region.value === "Posisi Anda") {
       getSchedulesPrayerByPosition(latitude, longitude)
