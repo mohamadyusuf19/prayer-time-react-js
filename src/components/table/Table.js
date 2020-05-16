@@ -9,20 +9,20 @@ const date = new Date();
 const formatDate = moment(date).format("DD-MM-YYYY");
 const borderText = (params) =>
   params === formatDate
-    ? { color: "#fff", fontWeight: "bold", background: "grey" }
+    ? { fontWeight: "bold", background: "#C8DFE1" }
     : null;
 
 const TableManual = ({ data }) => {
   return (
     <table className='table-manual'>
       <thead>
-        <tr>
-          <th>Tanggal</th>
-          <th>Subuh</th>
-          <th>Zuhur</th>
-          <th>Ashar</th>
-          <th>Magrib</th>
-          <th>Isya'</th>
+        <tr className="title-table">
+          <th style={{ fontSize:"15px" }}>Tanggal</th>
+          <th style={{ fontSize:"15px" }}>Subuh</th>
+          <th style={{ fontSize:"15px" }}>Zuhur</th>
+          <th style={{ fontSize:"15px" }}>Ashar</th>
+          <th style={{ fontSize:"15px" }}>Magrib</th>
+          <th style={{ fontSize:"15px" }}>Isya'</th>
         </tr>
       </thead>
       <tbody>

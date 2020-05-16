@@ -1,33 +1,38 @@
 .wrapper-footer {
-  .footer {
-    background: grey;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 12px;
-    box-sizing: border-box;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 10;
-    .icon {
-      text-align: center;
-      color: #fff;
-    }
-    .active-icon {
-      color: #010101;
-    }
-    @media (min-width: 600px) {
-      width: 450px;
+    margin: 0;
+    .footer {
+        background: linear-gradient(to right, #055a91, rgba(50, 160, 160, 0.938));
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 12px;
+        box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 10;
+        .icon {
+            font-size: 15px;
+            text-align: center;
+            color: #fff;
+        }
+        .active-icon {
+            font-size: 20px;
+            color: #fff;
+            border-bottom: 3px solid #fff;
+        }
+        @media (min-width: 600px) {
+            width: 450px;
+        }
+        @media (max-width: 600px) {
+            left: 0;
+        }
     }
     @media (max-width: 600px) {
-      left: 0;
+        width: 100%;
     }
-  }
-  @media (max-width: 600px) {
-    width: 100%;
-  }
-  @media (min-width: 600px) {
-    width: 450px;
-    margin: auto;
-  }
+    @media (min-width: 600px) {
+        width: 450px;
+        margin: auto;
+    }
 }

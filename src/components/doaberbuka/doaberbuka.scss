@@ -1,36 +1,42 @@
 .wrapper-doa {
-  .title-schedule {
-    margin: 100px auto 0px auto;
-    color: #010101;
-    font-size: 30px;
-    font-weight: bold;
-    font-family: "Noto Sans";
-    text-align: center;
-  }
-  .text-arabic {
-    color: #000;
-    font-size: 18px;
-    font-family: "Noto Sans";
-    text-align: center;
-    margin: 20px 20px;
-  }
-  .text-latin {
-    color: #000;
-    font-size: 18px;
-    font-weight: 600;
-    font-family: "Noto Sans";
-    text-align: center;
-    margin: 20px 20px 30px 20px;
-  }
-  .desc {
-    color: #010101;
-    font-size: 18px;
-    font-family: "Noto Sans";
-    text-align: center;
-    margin: 20px 20px 60px 20px;
-  }
-  .doa {
-    height: 150px;
-    margin: 20px auto;
-  }
+    .title-schedule {
+        margin: 100px auto 0px auto;
+        color: #010101;
+        font-size: 30px;
+        font-weight: bold;
+        font-family: "Noto Sans";
+        text-align: center;
+    }
+    .text-arabic {
+        color: #000;
+        font-size: 20px;
+        font-family: "Noto Sans";
+        text-align: center;
+        margin: 20px 20px;
+    }
+    .text-latin {
+        color: #000;
+        font-size: 20px;
+        font-weight: 600;
+        font-family: "Noto Sans";
+        text-align: center;
+        margin: 20px 20px 30px 20px;
+    }
+    .desc {
+        color: #010101;
+        font-size: 20px;
+        font-family: "Noto Sans";
+        text-align: center;
+        margin: 20px 20px 60px 20px;
+    }
+    .doa {
+        height: 150px;
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .wrapper-doa {
+        height: auto;
+    }
 }
