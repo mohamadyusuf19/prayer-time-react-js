@@ -1,11 +1,12 @@
 .button-position {
-  height: 40px;
-  margin: 0px 20px;
-  background: grey;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  cursor: pointer;
+    height: 40px;
+    margin: 0px 20px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #055a91, rgba(50, 160, 160, 0.938));
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    cursor: pointer;
 }

@@ -5,7 +5,7 @@ import { FaMapMarker } from "react-icons/fa";
 
 import "./home.scss";
 
-const mosqueIcon = require("../../assets/mosque.png");
+const mosqueIcon = require("../../assets/mosque-light.png");
 
 const Home = ({
   subuh,
@@ -21,6 +21,7 @@ const Home = ({
   const history = useHistory();
   return (
     <div className='wrapper-home'>
+      <div className="inline-wrapper-home">
       <div className='card'>
         <p className='text-title-iftar'>Waktu Berbuka</p>
         <p className='text-region-iftar'>
@@ -68,7 +69,7 @@ const Home = ({
             <p className='text-date'>{ashar}</p>
           </div>
           <div className='wrapper-time'>
-            <p className='text-time'>Magrib</p>
+            <p className='text-time'>Maghrib</p>
             <p className='text-date'>{magrib}</p>
           </div>
           <div className='wrapper-time'>
@@ -77,6 +78,7 @@ const Home = ({
           </div>
         </>
       )}
+      </div>
     </div>
   );
 };
