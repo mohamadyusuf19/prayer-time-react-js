@@ -30,6 +30,7 @@ const HomeContainer = () => {
           if (isEmpty(newData)) return null;
           return (
             <Home
+              dateNow={newData[0].date.timestamp}
               region={context.state.region.label}
               subuh={newData[0].timings.Fajr}
               zuhur={newData[0].timings.Dhuhr}
