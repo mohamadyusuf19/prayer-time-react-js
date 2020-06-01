@@ -17,9 +17,11 @@
     "react-icons": "^3.10.0",
     "react-leaflet": "^2.7.0",
     "react-loading-skeleton": "^2.0.1",
+    "react-pose": "^4.0.10",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
-    "react-select": "^3.0.8"
+    "react-select": "^3.0.8",
+    "react-transition-group": "^4.4.1"
   },
   "scripts": {
     "start": "react-scripts start",

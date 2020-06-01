@@ -1,9 +1,14 @@
-import React, { useState } from "react";
-
+import React, { useState, useContext } from "react";
 import AsyncSelect from "react-select/async";
+import { OnFocusContext } from "../../context/onFocusMapContext";
 
 const Input = ({ onChange, value, data, placeholder }) => {
   const [inputValue, setInputValue] = useState("");
+  const { onFocus, ChangeInputContext, MouseOut } = useContext(OnFocusContext);
+
+  // React.useEffect(() => {
+  //   console.log("ubah", onFocus);
+  // });
 
   const filterData = (inputValue) => {
     return data.filter((i) =>
@@ -22,6 +27,7 @@ const Input = ({ onChange, value, data, placeholder }) => {
     setInputValue(inputValue);
     return inputValue;
   };
+
   return (
     <AsyncSelect
       cacheOptions
@@ -31,6 +37,9 @@ const Input = ({ onChange, value, data, placeholder }) => {
       onChange={onChange}
       value={value}
       placeholder={placeholder}
+      onFocus={ChangeInputContext}
+      onBlur={MouseOut}
+      onKeyDown
     />
   );
 };
