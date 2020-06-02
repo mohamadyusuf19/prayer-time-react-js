@@ -11,7 +11,7 @@ import {
   fetchProvince,
   fetchUnicode,
 } from "./services/FetchRegion";
-import Footer from "./components/footer/Footer";
+import { OnFocusProvider } from "./context/onFocusMapContext";
 
 const initialState = {
   data: [],
@@ -122,7 +122,9 @@ function App() {
   }, []);
   return (
     <SchedulesProvider value={{ state, dispatch }}>
-      <Routes />
+      <OnFocusProvider>
+        <Routes />
+      </OnFocusProvider>
     </SchedulesProvider>
   );
 }
