@@ -11,9 +11,6 @@ const Footer = () => {
   });
 
   return (
-    // <OnFocusContext.Consumer>
-    //   {(OnFocus) => (
-
     <div className="wrapper-footer">
       <footer className={onFocus === false ? "footer" : "footerTop"}>
         <NavLink exact className="icon" to="/" activeClassName="active-icon">

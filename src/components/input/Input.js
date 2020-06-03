@@ -6,10 +6,6 @@ const Input = ({ onChange, value, data, placeholder }) => {
   const [inputValue, setInputValue] = useState("");
   const { onFocus, ChangeInputContext, MouseOut } = useContext(OnFocusContext);
 
-  // React.useEffect(() => {
-  //   console.log("ubah", onFocus);
-  // });
-
   const filterData = (inputValue) => {
     return data.filter((i) =>
       i.label.toLowerCase().includes(inputValue.toLowerCase())
