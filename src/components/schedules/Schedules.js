@@ -6,24 +6,21 @@ import Skeleton from "react-loading-skeleton";
 import TableManual from "../table/Table";
 
 const Schedules = ({ dataSource, region, loading }) => {
-   return (
-      <div className='wrapper-schedules'>
-         <p className='title-schedule'>Jadwal Sholat</p>
-         <p className='text-region-iftar'>
-            <FaMapMarker /> {region}
-         </p>
-         {/* <p className='desc'>
-        Jangan sampai dehidrasi membuat anda lupa waktu sholat ya
-      </p> */}
-         {loading ? (
-            <Skeleton width={"100%"} height={400} />
-         ) : (
-            <div className='table'>
-               <TableManual data={dataSource} />
-            </div>
-         )}
-      </div>
-   );
+  return (
+    <div className='wrapper-schedules'>
+      <p className='title-schedule'>Jadwal Sholat</p>
+      <p className='text-region-iftar'>
+        <FaMapMarker /> {region}
+      </p>
+      {loading ? (
+        <Skeleton width={"100%"} height={400} />
+      ) : (
+        <div className='table'>
+          <TableManual data={dataSource} />
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default Schedules;
