@@ -11,7 +11,6 @@ const Map = (props) => {
   const { loading, onChangeProvince, valueProvince, dataProvince } = props;
 
   return (
-    // <OnFocusProvider>
     <>
       <div className="wrapper-maps">
         <p className="title-schedule">Cari Daerahmu</p>
@@ -41,7 +40,6 @@ const Map = (props) => {
         <DetailMaps {...props} placeholder="Pilih Kota" />
       )}
     </>
-    // </OnFocusProvider>
   );
 };
 

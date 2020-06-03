@@ -4,7 +4,7 @@ import { OnFocusContext } from "../../context/onFocusMapContext";
 
 const Input = ({ onChange, value, data, placeholder }) => {
   const [inputValue, setInputValue] = useState("");
-  const { onFocus, ChangeInputContext, MouseOut } = useContext(OnFocusContext);
+  const { ChangeInputContext, MouseOut } = useContext(OnFocusContext);
 
   const filterData = (inputValue) => {
     return data.filter((i) =>
