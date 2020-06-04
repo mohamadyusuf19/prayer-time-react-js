@@ -16,7 +16,7 @@ const Footer = () => {
         <NavLink exact className='icon' to='/' activeClassName='active-icon'>
           <div>
             <FaHome />
-            <p style={{ margin: 0, fontSize: 11 }}>Home</p>
+            <p style={{ margin: 0, fontSize: 11 }}>Beranda</p>
           </div>
         </NavLink>
         <NavLink className='icon' to='/maps' activeClassName='active-icon'>

@@ -4,12 +4,12 @@
   background-size: cover;
   background-attachment: fixed;
   margin-bottom: 50px;
-  height: 100vh;
+  height: 115vh;
   .inline-wrapper-home {
     padding-top: 20px;
     background: rgba(0, 0, 0, 0.7);
     justify-content: center;
-    height: 100vh;
+    height: 115vh;
     .card {
       background: linear-gradient(to right, #055a91, rgba(50, 160, 160, 0.938));
       border-radius: 8px;
@@ -96,6 +96,28 @@
     }
     .wrapper-time-skeleton {
       padding: 0px 50px;
+    }
+  }
+}
+
+// mobile view
+@media (max-width: 768px) {
+  .wrapper-home {
+    height: 100%;
+    .inline-wrapper-home {
+      height: 100%;
+      margin-bottom: 60px;
+    }
+  }
+}
+
+// iphone 5/SE view
+@media (max-width: 320px) {
+  .wrapper-home {
+    .inline-wrapper-home {
+      .wrapper-time {
+        padding: 3px 20px;
+      }
     }
   }
 }
