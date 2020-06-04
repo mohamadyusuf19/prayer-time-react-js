@@ -22,8 +22,9 @@
       color: #fff;
     }
     .active-icon {
-      font-size: 20px;
-      color: #fff;
+      svg {
+        color: #03fcad;
+      }
     }
     @media (min-width: 600px) {
       width: 450px;
