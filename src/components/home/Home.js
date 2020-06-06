@@ -129,11 +129,6 @@ const Home = ({
               <p className='text-date-iftar'>{date}</p>
             </div>
           )}
-          {loading ? (
-            <Skeleton height={40} width={"50%"} />
-          ) : (
-            <p className='text-time-iftar'>{magrib}</p>
-          )}
         </div>
         {conditional()}
         <p className='title-schedule'>Jadwal Sholat</p>
