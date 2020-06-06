@@ -12,9 +12,6 @@ const Schedules = ({ dataSource, region, loading }) => {
       <p className='text-region-iftar'>
         <FaMapMarker /> {region}
       </p>
-      <p className='desc'>
-        Jangan sampai dehidrasi membuat anda lupa waktu sholat ya
-      </p>
       {loading ? (
         <Skeleton width={"100%"} height={400} />
       ) : (

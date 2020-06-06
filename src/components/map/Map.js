@@ -12,32 +12,32 @@ const Map = (props) => {
 
   return (
     <>
-      <div className="wrapper-maps">
-        <p className="title-schedule">Cari Daerahmu</p>
-        <p className="desc">
+      <div className='wrapper-maps'>
+        <p className='title-schedule'>Cari Daerahmu</p>
+        <p className='desc'>
           Alhamdulillah semua daerah kabupaten/kota se-Indonesia bisa dicari.
           menentukan waktu shalat berdasarkan lokasi yang dicari atau
           berdasarkan posisi.
         </p>
-        <div className="wrapper-input">
+        <div className='wrapper-input'>
           <Input
             onChange={onChangeProvince}
             value={valueProvince}
             data={dataProvince}
-            placeholder="Pilih Provinsi"
+            placeholder='Pilih Provinsi'
           />
         </div>
-        <div className="wrapper-input">
+        <div className='wrapper-input'>
           <Input {...props} />
         </div>
         <Button {...props} />
       </div>
       {loading ? (
-        <div className="wrapper-skeleton">
+        <div className='wrapper-skeleton'>
           <Skeleton height={400} width={"100%"} />
         </div>
       ) : (
-        <DetailMaps {...props} placeholder="Pilih Kota" />
+        <DetailMaps {...props} placeholder='Pilih Kota' />
       )}
     </>
   );

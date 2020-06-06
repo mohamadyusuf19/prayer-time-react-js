@@ -1,5 +1,5 @@
 .card-time {
-  background: #fff;
+  background: linear-gradient(to right, #055a91, rgba(50, 160, 160, 0.938));
   border-radius: 8px;
   padding: 20px;
   box-sizing: border-box;
@@ -9,16 +9,19 @@
     font-weight: 500;
     font-family: "Noto Sans";
     margin: 0px 0px 0px 0px;
+    color: #fff;
   }
   .text-date-iftar-hijri {
     font-size: 16px;
     font-family: "Noto Sans";
     margin: 0px;
+    color: #fff;
   }
   .text-time-iftar {
     font-size: 30px;
     font-weight: 600;
     font-family: "Noto Sans";
     margin: 0px;
+    color: #fff;
   }
 }

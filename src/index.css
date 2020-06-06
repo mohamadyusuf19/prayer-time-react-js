@@ -127,3 +127,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+/* leaflet marker icon */
+.leaflet-marker-icon {
+  height: 0px;
+  width: 0px;
+}
