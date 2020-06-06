@@ -1,20 +1,19 @@
 .layout {
-    margin: auto;
-    border: solid 1px#f6f7f9;
-    box-sizing: border-box;
-    background: #f6f7f9;
-    .header {
-        background: grey;
-        height: 60px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
-    }
-    @media (max-width: 600px) {
-        width: 100%;
-    }
-    @media (min-width: 600px) {
-        width: 450px;
-    }
+  margin: auto;
+  box-sizing: border-box;
+  background: #f6f7f9;
+  .header {
+    background: grey;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+  @media (min-width: 600px) {
+    width: 450px;
+  }
 }
