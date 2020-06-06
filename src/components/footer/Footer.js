@@ -5,14 +5,14 @@ import { OnFocusContext } from "../../context/onFocusMapContext";
 import "./footer.scss";
 
 const Footer = () => {
-  // const { onFocus } = useContext(OnFocusContext);
+  const { onFocus } = useContext(OnFocusContext);
   // React.useEffect(() => {
   //   console.log("coba", onFocus);
   // });
 
   return (
     <div className="wrapper-footer">
-      <footer className="footer">
+      <footer className={onFocus ? "footerHide" : "footer"}>
         <NavLink exact className="icon" to="/" activeClassName="active-icon">
           <div>
             <FaHome />
