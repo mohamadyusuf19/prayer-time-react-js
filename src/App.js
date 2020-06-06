@@ -122,7 +122,9 @@ function App() {
   }, []);
   return (
     <SchedulesProvider value={{ state, dispatch }}>
-      <Routes />
+      <OnFocusProvider>
+        <Routes />
+      </OnFocusProvider>
     </SchedulesProvider>
   );
 }

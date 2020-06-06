@@ -3,11 +3,7 @@ import React, { useState, createContext } from "react";
 export const OnFocusContext = createContext({ onFocus: true });
 
 export const OnFocusProvider = (props) => {
-  let [onFocus, setOnFocus] = useState(false);
-
-  // React.useEffect(() => {
-  //   console.log("dicek ", onFocus);
-  // });
+  let [onFocus, setOnFocus] = useState(false)
   const ChangeInputContext = () => {
     setOnFocus(true);
   };
