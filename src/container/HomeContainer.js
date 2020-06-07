@@ -28,7 +28,6 @@ const HomeContainer = () => {
               />
             );
           if (isEmpty(newData)) return null;
-          console.log(newData);
           return (
             <Home
               dateNow={newData[0].date.timestamp}

@@ -139,42 +139,47 @@ const Home = ({
         ) : (
           <>
             <div
-              className='wrapper-time'
-              style={{
-                background: compareDateOr(isya, subuh) ? background : null,
-              }}>
+              className={
+                compareDateOr(isya, subuh)
+                  ? "wrapper-time-active"
+                  : "wrapper-time"
+              }>
               <p className='text-time'>Subuh</p>
               <p className='text-date'>{subuh}</p>
             </div>
             <div
-              className='wrapper-time'
-              style={{
-                background: compareDate(subuh, zuhur) ? background : null,
-              }}>
+              className={
+                compareDate(subuh, zuhur)
+                  ? "wrapper-time-active"
+                  : "wrapper-time"
+              }>
               <p className='text-time'>Zuhur</p>
               <p className='text-date'>{zuhur}</p>
             </div>
             <div
-              className='wrapper-time'
-              style={{
-                background: compareDate(zuhur, ashar) ? background : null,
-              }}>
+              className={
+                compareDate(zuhur, ashar)
+                  ? "wrapper-time-active"
+                  : "wrapper-time"
+              }>
               <p className='text-time'>Ashar</p>
               <p className='text-date'>{ashar}</p>
             </div>
             <div
-              className='wrapper-time'
-              style={{
-                background: compareDate(ashar, magrib) ? background : null,
-              }}>
+              className={
+                compareDate(ashar, magrib)
+                  ? "wrapper-time-active"
+                  : "wrapper-time"
+              }>
               <p className='text-time'>Maghrib</p>
               <p className='text-date'>{magrib}</p>
             </div>
             <div
-              className='wrapper-time'
-              style={{
-                background: compareDate(magrib, isya) ? background : null,
-              }}>
+              className={
+                compareDate(magrib, isya)
+                  ? "wrapper-time-active"
+                  : "wrapper-time"
+              }>
               <p className='text-time'>Isya'</p>
               <p className='text-date'>{isya}</p>
             </div>

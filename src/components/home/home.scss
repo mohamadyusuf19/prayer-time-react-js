@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap");
 .wrapper-home {
-  background: url(https://images.pexels.com/photos/295813/pexels-photo-295813.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background: #fff;
   background-size: cover;
   background-attachment: fixed;
   margin-bottom: 50px;
@@ -8,7 +8,7 @@
   padding-bottom: 20px;
   .inline-wrapper-home {
     padding-top: 20px;
-    background: rgba(0, 0, 0, 0.7);
+    background: #fff;
     justify-content: center;
     height: 115vh;
     .card {
@@ -60,14 +60,14 @@
     }
     .title-schedule {
       margin: 40px auto 20px auto;
-      color: #fff;
+      color: #000;
       font-size: 30px;
       font-weight: bold;
       font-family: "Julius Sans One", sans-serif;
       text-align: center;
     }
     .desc {
-      color: #fff;
+      color: #000;
       font-size: 20px;
       font-family: "Julius Sans One", sans-serif;
       text-align: center;
@@ -81,6 +81,29 @@
       box-sizing: border-box;
       margin: 10px 20px;
       border-radius: 5px;
+      .text-time {
+        color: #000;
+        font-size: 20px;
+        font-family: "Julius Sans One", sans-serif;
+        font-weight: 600;
+        margin: 0px;
+      }
+      .text-date {
+        color: #000;
+        font-size: 20px;
+        font-family: "Julius Sans One", sans-serif;
+        margin: 0px;
+      }
+    }
+    .wrapper-time-active {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 3px 50px;
+      box-sizing: border-box;
+      margin: 10px 20px;
+      border-radius: 5px;
+      background: linear-gradient(to right, #055a91, rgba(50, 160, 160, 0.938));
       .text-time {
         color: #fff;
         font-size: 20px;
