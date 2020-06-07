@@ -1,0 +1,23 @@
+.wrapper-news {
+  padding: 20;
+  .card {
+    background: linear-gradient(to right, #055a91, rgba(50, 160, 160, 0.938));
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 20px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    .text-title {
+      font-size: 20px;
+      font-family: "Julius Sans One", sans-serif;
+      color: #fff;
+      margin: 5px 0px;
+    }
+    .text-date-iftar-hijri {
+      font-size: 13px;
+      color: #fff;
+      font-family: "Julius Sans One", sans-serif;
+      margin: 0px;
+    }
+  }
+}

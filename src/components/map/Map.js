@@ -13,11 +13,11 @@ const Map = (props) => {
   return (
     <>
       <div className='wrapper-maps'>
-        <p className='title-schedule'>Cari Daerahmu</p>
+        <p className='title-schedule'>Cari Jadwal Shalat</p>
         <p className='desc'>
           Alhamdulillah semua daerah kabupaten/kota se-Indonesia bisa dicari.
           menentukan waktu shalat berdasarkan lokasi yang dicari atau
-          berdasarkan posisi.
+          berdasarkan lokasi anda.
         </p>
         <div className='wrapper-input'>
           <Input

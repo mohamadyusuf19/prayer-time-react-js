@@ -1,18 +1,18 @@
 .table-manual {
-    border-collapse: collapse;
-    width: 100%;
-    background: rgb(241, 246, 243);
-    .title-table {
-        background: linear-gradient(to right, #055a91, rgba(50, 160, 160, 0.938));
-        color: #fff;
-    }
-    td,
-    th {
-        border-bottom: 1px solid #dddddd;
-        height: 50px;
-        text-align: center;
-        font-size: 10px;
-        overflow-x: auto;
-        padding: 3px;
-    }
+  border-collapse: collapse;
+  width: 100%;
+  background: rgb(241, 246, 243);
+  .title-table {
+    background: linear-gradient(to right, #055a91, rgba(50, 160, 160, 0.938));
+    color: #fff;
+  }
+  td,
+  th {
+    border-bottom: 1px solid #dddddd;
+    height: 50px;
+    text-align: center;
+    font-size: 8px;
+    overflow-x: auto;
+    padding: 3px;
+  }
 }

@@ -3,7 +3,7 @@
   .footer {
     background: linear-gradient(to right, #055a91, rgba(50, 160, 160, 0.938));
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     padding: 12px;
     box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
@@ -12,9 +12,14 @@
     width: 100%;
     z-index: 10;
     .icon {
-      font-size: 15px;
+      font-size: 14px;
       text-align: center;
       color: #fff;
+      font-family: "Julius Sans One", sans-serif;
+    }
+    .active-icon {
+      font-size: 18px;
+      color: linear-gradient(to right, #055a91, rgba(50, 160, 160, 0.938));
     }
     @media (min-width: 600px) {
       width: 450px;

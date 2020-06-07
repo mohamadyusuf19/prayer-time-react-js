@@ -1,6 +1,12 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { FaHome, FaTable, FaMapMarker, FaInfoCircle } from "react-icons/fa";
+import {
+  FaHome,
+  FaTable,
+  FaMapMarker,
+  FaInfoCircle,
+  FaNewspaper,
+} from "react-icons/fa";
 import { OnFocusContext } from "../../context/onFocusMapContext";
 import "./footer.scss";
 
@@ -17,6 +23,12 @@ const Footer = () => {
           <div>
             <FaHome />
             <p style={{ margin: 0, fontSize: 11 }}>Beranda</p>
+          </div>
+        </NavLink>
+        <NavLink className='icon' to='/news' activeClassName='active-icon'>
+          <div>
+            <FaNewspaper />
+            <p style={{ margin: 0, fontSize: 11 }}>Berita</p>
           </div>
         </NavLink>
         <NavLink className='icon' to='/maps' activeClassName='active-icon'>

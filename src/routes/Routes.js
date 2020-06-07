@@ -6,16 +6,18 @@ import ScheduleContainer from "../container/ScheduleContainer";
 import AccountContainer from "../container/AccountContainer";
 import DoaBerbukaContainer from "../container/DoaBerbukaContainer";
 import Footer from "../components/footer/Footer";
+import NewsContainer from "../container/NewsContainer";
 
 const Routes = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={HomeContainer} />
-        <Route path="/maps" component={MapContainer} />
-        <Route path="/schedules" component={ScheduleContainer} />
-        <Route path="/account" component={AccountContainer} />
-        <Route path="/doa-buka-puasa" component={DoaBerbukaContainer} />
+        <Route exact path='/' component={HomeContainer} />
+        <Route path='/maps' component={MapContainer} />
+        <Route path='/schedules' component={ScheduleContainer} />
+        <Route path='/account' component={AccountContainer} />
+        <Route path='/doa-buka-puasa' component={DoaBerbukaContainer} />
+        <Route path='/news' component={NewsContainer} />
       </Switch>
       <Footer />
     </Router>
