@@ -37,9 +37,9 @@ const News = ({ dateNow }) => {
         <p className='text-date-iftar-hijri'>Dzikir pagi dan petang</p>
       </div>
       {(monthNowHijri === 12 && dateNowHijri === "10") ||
-      dateNowHijri === "11" ||
-      dateNowHijri === "12" ||
-      dateNowHijri === "13" ? (
+      (monthNowHijri === 12 && dateNowHijri === "11") ||
+      (monthNowHijri === 12 && dateNowHijri === "12") ||
+      (monthNowHijri === 12 && dateNowHijri === "13") ? (
         <div className='card'>
           <p className='text-title'>Peringatan</p>
           <p className='text-date-iftar-hijri'>
@@ -86,15 +86,15 @@ const News = ({ dateNow }) => {
         </div>
       ) : null}
       {(monthNowHijri === 12 && dateNowHijri === "01") ||
-      dateNowHijri === "02" ||
-      dateNowHijri === "03" ||
-      dateNowHijri === "04" ||
-      dateNowHijri === "05" ||
-      dateNowHijri === "06" ||
-      dateNowHijri === "07" ||
-      dateNowHijri === "08" ||
-      dateNowHijri === "09" ||
-      dateNowHijri === "10" ? (
+      (monthNowHijri === 12 && dateNowHijri === "02") ||
+      (monthNowHijri === 12 && dateNowHijri === "03") ||
+      (monthNowHijri === 12 && dateNowHijri === "04") ||
+      (monthNowHijri === 12 && dateNowHijri === "05") ||
+      (monthNowHijri === 12 && dateNowHijri === "06") ||
+      (monthNowHijri === 12 && dateNowHijri === "07") ||
+      (monthNowHijri === 12 && dateNowHijri === "08") ||
+      (monthNowHijri === 12 && dateNowHijri === "09") ||
+      (monthNowHijri === 12 && dateNowHijri === "10") ? (
         <div className='card'>
           <p className='text-title'>Amalan hari ini</p>
           <p className='text-date-iftar-hijri'>
