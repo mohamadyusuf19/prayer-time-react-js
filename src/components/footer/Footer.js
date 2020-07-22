@@ -28,7 +28,7 @@ const Footer = () => {
         <NavLink className='icon' to='/news' activeClassName='active-icon'>
           <div>
             <FaNewspaper />
-            <p style={{ margin: 0, fontSize: 11 }}>Berita</p>
+            <p style={{ margin: 0, fontSize: 11 }}>Amalan</p>
           </div>
         </NavLink>
         <NavLink className='icon' to='/maps' activeClassName='active-icon'>
