@@ -65,35 +65,37 @@ const reducer = (state, action) => {
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   useEffect(() => {
-    fetchUnicode().then((unicode) => {
-      dispatch({ type: "GET_UNICODE", payload: unicode });
-      const province = isEmpty(localStorage.getItem("province"))
-        ? localStorage.setItem("province", JSON.stringify(state.province)) ||
-          state.province
-        : JSON.parse(localStorage.getItem("province"));
-      fetchProvince(unicode)
-        .then((res) => {
-          const newData = res.map((item, i) => {
-            return {
-              value: item.id,
-              label: item.name,
-            };
-          });
-          dispatch({ type: "GET_DATA_PROVINCE", payload: newData });
-        })
-        .catch((err) => console.log(err));
-      fetchRegion(unicode, province.value)
-        .then((res) => {
-          const newData = res.map((item, i) => {
-            return {
-              value: item.name,
-              label: item.name,
-            };
-          });
-          dispatch({ type: "GET_DATA_REGION", payload: newData });
-        })
-        .catch((err) => console.log(err));
-    });
+    fetchUnicode()
+      .then((unicode) => {
+        dispatch({ type: "GET_UNICODE", payload: unicode });
+        const province = isEmpty(localStorage.getItem("province"))
+          ? localStorage.setItem("province", JSON.stringify(state.province)) ||
+            state.province
+          : JSON.parse(localStorage.getItem("province"));
+        fetchProvince(unicode)
+          .then((res) => {
+            const newData = res.map((item, i) => {
+              return {
+                value: item.id,
+                label: item.name,
+              };
+            });
+            dispatch({ type: "GET_DATA_PROVINCE", payload: newData });
+          })
+          .catch(() => dispatch({ type: "SET_LOADING", payload: false }));
+        fetchRegion(unicode, province.value)
+          .then((res) => {
+            const newData = res.map((item, i) => {
+              return {
+                value: item.name,
+                label: item.name,
+              };
+            });
+            dispatch({ type: "GET_DATA_REGION", payload: newData });
+          })
+          .catch(() => dispatch({ type: "SET_LOADING", payload: false }));
+      })
+      .catch(() => dispatch({ type: "SET_LOADING", payload: false }));
   }, []);
   useEffect(() => {
     const region = isEmpty(localStorage.getItem("region"))
@@ -110,14 +112,14 @@ function App() {
           dispatch({ type: "GET_DATA", payload: res });
           dispatch({ type: "SET_LOADING", payload: false });
         })
-        .catch((err) => console.log(err));
+        .catch(() => dispatch({ type: "SET_LOADING", payload: false }));
     } else {
       getSchedulesPrayer(region.value)
         .then((res) => {
           dispatch({ type: "GET_DATA", payload: res });
           dispatch({ type: "SET_LOADING", payload: false });
         })
-        .catch((err) => console.log(err));
+        .catch(() => dispatch({ type: "SET_LOADING", payload: false }));
     }
   }, []);
   return (

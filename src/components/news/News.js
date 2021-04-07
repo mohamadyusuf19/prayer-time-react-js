@@ -15,20 +15,6 @@ const News = ({ dateNow }) => {
   const yearHijri = isEmpty(dateNow) ? null : dateNow[0].date.hijri.year;
   return (
     <div className='wrapper-news'>
-      <div className='flex'>
-        <div
-          className='card-dzikir'
-          onClick={() => history.push("/dzikir-pagi")}>
-          <p className='title'>Dzikir Pagi</p>
-          <FaSun />
-        </div>
-        <div
-          className='card-dzikir'
-          onClick={() => history.push("/dzikir-petang")}>
-          <p className='title'>Dzikir Petang</p>
-          <FaMoon />
-        </div>
-      </div>
       {monthNowHijri === 10 && dateNowHijri === "01" ? (
         <div className='card'>
           <p className='text-title'>
@@ -52,6 +38,20 @@ const News = ({ dateNow }) => {
         <p className='text-date-iftar-hijri'>Shalat Witir</p>
         <p className='text-date-iftar-hijri'>Membaca Alquran</p>
         <p className='text-date-iftar-hijri'>Dzikir pagi dan petang</p>
+      </div>
+      <div className='flex'>
+        <div
+          className='card-dzikir'
+          onClick={() => history.push("/dzikir-pagi")}>
+          <p className='title'>Dzikir Pagi</p>
+          <FaSun />
+        </div>
+        <div
+          className='card-dzikir'
+          onClick={() => history.push("/dzikir-petang")}>
+          <p className='title'>Dzikir Petang</p>
+          <FaMoon />
+        </div>
       </div>
       {(monthNowHijri === 12 && dateNowHijri === "10") ||
       (monthNowHijri === 12 && dateNowHijri === "11") ||

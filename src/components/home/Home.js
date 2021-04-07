@@ -9,6 +9,7 @@ import {
   formatDateCompare,
 } from "../../utils/FormatDate";
 import Time from "../time/Time";
+import { useHistory } from "react-router";
 
 const Home = ({
   subuh,
@@ -23,6 +24,7 @@ const Home = ({
   dateNow,
 }) => {
   const newDate = new Date();
+  const history = useHistory();
   const compareDate = (firstTime, lastTime) => {
     // eslint-disable-next-line no-unused-expressions
     return (
@@ -61,7 +63,10 @@ const Home = ({
   return (
     <div className='wrapper-home'>
       <div className='inline-wrapper-home'>
-        <div className='card'>
+        <div
+          className='card'
+          onClick={() => history.push("/maps")}
+          style={{ cursor: "pointer" }}>
           <p className='text-region-iftar'>
             <FaMapMarker /> {region}
           </p>

@@ -4,7 +4,7 @@ import "./schedules.scss";
 import { FaMapMarker, FaRegCalendarAlt } from "react-icons/fa";
 import Skeleton from "react-loading-skeleton";
 import TableManual from "../table/Table";
-import { formatDays, formatMonth } from "../../utils/FormatDate";
+import { formatMonth } from "../../utils/FormatDate";
 
 const Schedules = ({ dataSource, region, loading }) => {
   const date = new Date();
