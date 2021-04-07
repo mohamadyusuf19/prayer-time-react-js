@@ -21,33 +21,8 @@ const MapContainer = () => {
             dispatch({ type: "CHANGE_REGION", payload: e });
             dispatch({ type: "SET_LOADING", payload: true });
             localStorage.setItem("region", JSON.stringify(e));
-            getSchedulesPrayer(e.value).then((res) => {
-              const map = {
-                latitude: res[0].meta.latitude,
-                longitude: res[0].meta.longitude,
-              };
-              localStorage.setItem("map", JSON.stringify(map));
-              dispatch({ type: "SET_LOADING", payload: false });
-              dispatch({ type: "GET_DATA", payload: res });
-              dispatch({ type: "CHANGE_MAP", payload: map });
-            });
-          };
-          const onChangeProvince = (e) => {
-            if (e === null) return null;
-            dispatch({ type: "CHANGE_PROVINCE", payload: e });
-            dispatch({ type: "SET_LOADING", payload: true });
-            localStorage.setItem("province", JSON.stringify(e));
-            fetchRegion(context.state.unicode, e.value).then((res) => {
-              const newData = res.map((item, i) => {
-                return {
-                  value: item.name,
-                  label: item.name,
-                };
-              });
-              dispatch({ type: "GET_DATA_REGION", payload: newData });
-              dispatch({ type: "CHANGE_REGION", payload: newData[0] });
-              localStorage.setItem("region", JSON.stringify(newData[0]));
-              getSchedulesPrayer(newData[0].value).then((res) => {
+            getSchedulesPrayer(e.value)
+              .then((res) => {
                 const map = {
                   latitude: res[0].meta.latitude,
                   longitude: res[0].meta.longitude,
@@ -56,16 +31,49 @@ const MapContainer = () => {
                 dispatch({ type: "SET_LOADING", payload: false });
                 dispatch({ type: "GET_DATA", payload: res });
                 dispatch({ type: "CHANGE_MAP", payload: map });
-              });
-            });
+              })
+              .catch(() => dispatch({ type: "SET_LOADING", payload: false }));
+          };
+          const onChangeProvince = (e) => {
+            if (e === null) return null;
+            dispatch({ type: "CHANGE_PROVINCE", payload: e });
+            dispatch({ type: "SET_LOADING", payload: true });
+            localStorage.setItem("province", JSON.stringify(e));
+            fetchRegion(context.state.unicode, e.value)
+              .then((res) => {
+                const newData = res.map((item, i) => {
+                  return {
+                    value: item.name,
+                    label: item.name,
+                  };
+                });
+                dispatch({ type: "GET_DATA_REGION", payload: newData });
+                dispatch({ type: "CHANGE_REGION", payload: newData[0] });
+                localStorage.setItem("region", JSON.stringify(newData[0]));
+                getSchedulesPrayer(newData[0].value)
+                  .then((res) => {
+                    const map = {
+                      latitude: res[0].meta.latitude,
+                      longitude: res[0].meta.longitude,
+                    };
+                    localStorage.setItem("map", JSON.stringify(map));
+                    dispatch({ type: "SET_LOADING", payload: false });
+                    dispatch({ type: "GET_DATA", payload: res });
+                    dispatch({ type: "CHANGE_MAP", payload: map });
+                  })
+                  .catch(() =>
+                    dispatch({ type: "SET_LOADING", payload: false })
+                  );
+              })
+              .catch(() => dispatch({ type: "SET_LOADING", payload: false }));
           };
           const onClickGetPosition = () => {
             navigator.geolocation.getCurrentPosition(
               function (position) {
                 dispatch({ type: "SET_LOADING", payload: true });
                 const { latitude, longitude } = position.coords;
-                getSchedulesPrayerByPosition(latitude, longitude).then(
-                  (res) => {
+                getSchedulesPrayerByPosition(latitude, longitude)
+                  .then((res) => {
                     const map = {
                       latitude: res[0].meta.latitude,
                       longitude: res[0].meta.longitude,
@@ -79,8 +87,10 @@ const MapContainer = () => {
                     dispatch({ type: "CHANGE_MAP", payload: map });
                     dispatch({ type: "CHANGE_REGION", payload: data });
                     dispatch({ type: "CHANGE_PROVINCE", payload: data });
-                  }
-                );
+                  })
+                  .catch(() =>
+                    dispatch({ type: "SET_LOADING", payload: false })
+                  );
               },
               function (err) {
                 alert("Maaf lokasi anda tidak terdeteksi");

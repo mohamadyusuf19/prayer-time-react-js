@@ -1,6 +1,35 @@
 .wrapper-news {
   padding: 20px 0px 50px 0px;
   background: #fff;
+  .flex {
+    display: flex;
+    align-items: center;
+    .card-dzikir {
+      width: 50%;
+      height: 60px;
+      background: linear-gradient(to right, #055a91, rgba(50, 160, 160, 0.938));
+      border-radius: 8px;
+      padding: 20px;
+      box-sizing: border-box;
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+      margin: 0px 20px;
+      cursor: pointer;
+      .title {
+        font-size: 13px;
+        font-weight: bold;
+        font-family: "Julius Sans One", sans-serif;
+        margin: 0px;
+      }
+      &:hover {
+        background: #fff;
+        color: #4f4f4f;
+      }
+    }
+  }
   .card {
     background: linear-gradient(to right, #055a91, rgba(50, 160, 160, 0.938));
     border-radius: 8px;

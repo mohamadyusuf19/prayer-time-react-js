@@ -2,8 +2,11 @@ import React from "react";
 import isEmpty from "lodash/isEmpty";
 
 import "./news.scss";
+import { FaMoon, FaSun } from "react-icons/fa";
+import { useHistory } from "react-router";
 
 const News = ({ dateNow }) => {
+  const history = useHistory();
   const dateNowHijri = isEmpty(dateNow) ? null : dateNow[0].date.hijri.day;
   const dayNow = isEmpty(dateNow) ? null : dateNow[0].date.gregorian.weekday.en;
   const monthNowHijri = isEmpty(dateNow)
@@ -12,6 +15,20 @@ const News = ({ dateNow }) => {
   const yearHijri = isEmpty(dateNow) ? null : dateNow[0].date.hijri.year;
   return (
     <div className='wrapper-news'>
+      <div className='flex'>
+        <div
+          className='card-dzikir'
+          onClick={() => history.push("/dzikir-pagi")}>
+          <p className='title'>Dzikir Pagi</p>
+          <FaSun />
+        </div>
+        <div
+          className='card-dzikir'
+          onClick={() => history.push("/dzikir-petang")}>
+          <p className='title'>Dzikir Petang</p>
+          <FaMoon />
+        </div>
+      </div>
       {monthNowHijri === 10 && dateNowHijri === "01" ? (
         <div className='card'>
           <p className='text-title'>

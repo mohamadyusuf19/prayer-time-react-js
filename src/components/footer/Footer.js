@@ -25,7 +25,7 @@ const Footer = () => {
             <p style={{ margin: 0, fontSize: 11 }}>Beranda</p>
           </div>
         </NavLink>
-        <NavLink className='icon' to='/news' activeClassName='active-icon'>
+        <NavLink className='icon' to='/amalan' activeClassName='active-icon'>
           <div>
             <FaNewspaper />
             <p style={{ margin: 0, fontSize: 11 }}>Amalan</p>
@@ -43,7 +43,7 @@ const Footer = () => {
             <p style={{ margin: 0, fontSize: 11 }}>Jadwal</p>
           </div>
         </NavLink>
-        <NavLink className='icon' to='/account' activeClassName='active-icon'>
+        <NavLink className='icon' to='/info' activeClassName='active-icon'>
           <div>
             <FaInfoCircle />
             <p style={{ margin: 0, fontSize: 11 }}>Info</p>

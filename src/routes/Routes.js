@@ -7,6 +7,8 @@ import AccountContainer from "../container/AccountContainer";
 import DoaBerbukaContainer from "../container/DoaBerbukaContainer";
 import Footer from "../components/footer/Footer";
 import NewsContainer from "../container/NewsContainer";
+import DzikirFajr from "../components/dzikirfajr/DzikirFajr";
+import DzikirPetang from "../components/dzikirpetang/DzikirPetang";
 
 const Routes = () => {
   return (
@@ -15,9 +17,11 @@ const Routes = () => {
         <Route exact path='/' component={HomeContainer} />
         <Route path='/maps' component={MapContainer} />
         <Route path='/schedules' component={ScheduleContainer} />
-        <Route path='/account' component={AccountContainer} />
+        <Route path='/info' component={AccountContainer} />
         <Route path='/doa-buka-puasa' component={DoaBerbukaContainer} />
-        <Route path='/news' component={NewsContainer} />
+        <Route path='/amalan' component={NewsContainer} />
+        <Route path='/dzikir-pagi' component={DzikirFajr} />
+        <Route path='/dzikir-petang' component={DzikirPetang} />
       </Switch>
       <Footer />
     </Router>

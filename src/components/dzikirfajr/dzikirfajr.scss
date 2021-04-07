@@ -1,0 +1,53 @@
+.wrapper-dzikir {
+  background: #fff;
+  padding: 0px 0px 100px;
+  .header-dzikir {
+    box-sizing: border-box;
+    height: 60px;
+    background: linear-gradient(to right, #055a91, rgba(50, 160, 160, 0.938));
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 10px;
+    color: #fff;
+    position: fixed;
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+    @media (min-width: 600px) {
+      width: 450px;
+    }
+    p {
+      font-size: 16px;
+      margin: 0px 10px;
+      font-weight: bold;
+    }
+    .icon {
+      cursor: pointer;
+    }
+  }
+  .wrapper-flex {
+    padding: 60px 20px;
+    .flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: solid 1px #f1f1f1;
+      border-bottom: solid 1px #f1f1f1;
+      padding: 10px 0px;
+      margin-bottom: 10px;
+      .title {
+        color: #181818;
+        font-weight: 800;
+        width: 60%;
+      }
+      p {
+        margin: 0px;
+      }
+    }
+    .arabic {
+      font-size: 25px;
+      color: #181818;
+    }
+  }
+}

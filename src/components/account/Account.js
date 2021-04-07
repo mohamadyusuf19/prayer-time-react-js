@@ -9,7 +9,7 @@ const Account = () => {
     <div className='wrapper-account'>
       <p className='title-schedule'>Assalamualaikum</p>
       <p className='desc'>
-        Semoga aplikasi Prayer Time bisa bermanfaat untuk umat. Salam dari
+        Semoga aplikasi Prayer Time bisa bermanfaat untuk umat islam. Salam dari
         pengembang aplikasi.
       </p>
       <img alt='icon' className='chat' src={chatIcon} />
