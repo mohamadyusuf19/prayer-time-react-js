@@ -78,7 +78,7 @@ const MapContainer = () => {
                       latitude: res[0].meta.latitude,
                       longitude: res[0].meta.longitude,
                     };
-                    const data = { value: "Lokasi Anda", label: "Lokasi Anda" };
+                    const data = { value: "Lokasi Saya", label: "Lokasi Saya" };
                     localStorage.setItem("province", JSON.stringify(data));
                     localStorage.setItem("region", JSON.stringify(data));
                     localStorage.setItem("map", JSON.stringify(map));

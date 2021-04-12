@@ -16,7 +16,7 @@ const Map = (props) => {
         <p className='title-schedule'>Cari Jadwal Shalat</p>
         <p className='desc'>
           Tentukan waktu shalat berdasarkan lokasi yang dicari atau berdasarkan
-          lokasi anda.
+          lokasi saya.
         </p>
         <div className='wrapper-input'>
           <Input

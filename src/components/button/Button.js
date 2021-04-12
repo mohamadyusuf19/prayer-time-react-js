@@ -5,7 +5,7 @@ import "./button.scss";
 const Button = ({ onClick }) => {
   return (
     <div className='button-position' onClick={onClick}>
-      Cari Berdasarkan Lokasi Anda
+      Cari Berdasarkan Lokasi Saya
     </div>
   );
 };

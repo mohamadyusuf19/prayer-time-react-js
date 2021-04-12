@@ -106,7 +106,7 @@ function App() {
       ? state.map
       : JSON.parse(localStorage.getItem("map"));
     dispatch({ type: "SET_LOADING", payload: true });
-    if (region.value === "Lokasi Anda") {
+    if (region.value === "Lokasi Saya") {
       getSchedulesPrayerByPosition(latitude, longitude)
         .then((res) => {
           dispatch({ type: "GET_DATA", payload: res });
