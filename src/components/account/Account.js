@@ -7,10 +7,10 @@ const chatIcon = require("../../assets/platform.svg");
 const Account = () => {
   return (
     <div className='wrapper-account'>
-      <p className='title-schedule'>Assalamualaikum</p>
       <p className='desc'>
-        Semoga aplikasi Prayer Time bisa bermanfaat untuk umat islam. Salam dari
-        pengembang aplikasi.
+        Semoga bermanfaat
+        <br />
+        Salam dari pengembang aplikasi.
       </p>
       <img alt='icon' className='chat' src={chatIcon} />
       <p className='desc'>[Muslim Developer Community]</p>
