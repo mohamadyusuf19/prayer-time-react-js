@@ -39,12 +39,12 @@ const MapContainer = () => {
             dispatch({ type: "CHANGE_PROVINCE", payload: e });
             dispatch({ type: "SET_LOADING", payload: true });
             localStorage.setItem("province", JSON.stringify(e));
-            fetchRegion(context.state.unicode, e.value)
+            fetchRegion(e.value)
               .then((res) => {
                 const newData = res.map((item, i) => {
                   return {
-                    value: item.name,
-                    label: item.name,
+                    value: item.nama,
+                    label: item.nama,
                   };
                 });
                 dispatch({ type: "GET_DATA_REGION", payload: newData });

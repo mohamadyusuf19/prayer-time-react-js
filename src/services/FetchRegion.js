@@ -1,25 +1,25 @@
 import Axios from "axios";
 
-export const fetchRegion = (unicode, id) => {
+export const fetchRegion = (id) => {
   return new Promise(async (resolve, reject) => {
     try {
       const res = await Axios.get(
-        `${process.env.REACT_APP_API_ONGKIR}/MeP7c5ne${unicode}/m/wilayah/kabupaten?idpropinsi=${id}`
+        `${process.env.REACT_APP_API_LOCATION}/api/daerahindonesia/kota?id_provinsi=${id}`
       );
-      resolve(res.data.data);
+      resolve(res.data.kota_kabupaten);
     } catch (error) {
       reject(error.response);
     }
   });
 };
 
-export const fetchProvince = (unicode) => {
+export const fetchProvince = () => {
   return new Promise(async (resolve, reject) => {
     try {
       const res = await Axios.get(
-        `${process.env.REACT_APP_API_ONGKIR}/MeP7c5ne${unicode}/m/wilayah/provinsi`
+        `${process.env.REACT_APP_API_LOCATION}/api/daerahindonesia/provinsi`
       );
-      resolve(res.data.data);
+      resolve(res.data.provinsi);
     } catch (error) {
       reject(error.response);
     }

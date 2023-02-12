@@ -6,11 +6,7 @@ import {
 } from "./services/FetchSchedules";
 import { SchedulesProvider } from "./context/schedulesPrayerContext";
 import isEmpty from "lodash/isEmpty";
-import {
-  fetchRegion,
-  fetchProvince,
-  fetchUnicode,
-} from "./services/FetchRegion";
+import { fetchRegion, fetchProvince } from "./services/FetchRegion";
 import { OnFocusProvider } from "./context/onFocusMapContext";
 
 const initialState = {
@@ -65,35 +61,30 @@ const reducer = (state, action) => {
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   useEffect(() => {
-    fetchUnicode()
-      .then((unicode) => {
-        dispatch({ type: "GET_UNICODE", payload: unicode });
-        const province = isEmpty(localStorage.getItem("province"))
-          ? localStorage.setItem("province", JSON.stringify(state.province)) ||
-            state.province
-          : JSON.parse(localStorage.getItem("province"));
-        fetchProvince(unicode)
-          .then((res) => {
-            const newData = res.map((item, i) => {
-              return {
-                value: item.id,
-                label: item.name,
-              };
-            });
-            dispatch({ type: "GET_DATA_PROVINCE", payload: newData });
-          })
-          .catch(() => dispatch({ type: "SET_LOADING", payload: false }));
-        fetchRegion(unicode, province.value)
-          .then((res) => {
-            const newData = res.map((item, i) => {
-              return {
-                value: item.name,
-                label: item.name,
-              };
-            });
-            dispatch({ type: "GET_DATA_REGION", payload: newData });
-          })
-          .catch(() => dispatch({ type: "SET_LOADING", payload: false }));
+    const province = isEmpty(localStorage.getItem("province"))
+      ? localStorage.setItem("province", JSON.stringify(state.province)) ||
+        state.province
+      : JSON.parse(localStorage.getItem("province"));
+    fetchProvince()
+      .then((res) => {
+        const newData = res.map((item, i) => {
+          return {
+            value: item.id,
+            label: item.nama,
+          };
+        });
+        dispatch({ type: "GET_DATA_PROVINCE", payload: newData });
+      })
+      .catch(() => dispatch({ type: "SET_LOADING", payload: false }));
+    fetchRegion(province.value)
+      .then((res) => {
+        const newData = res.map((item, i) => {
+          return {
+            value: item.nama,
+            label: item.nama,
+          };
+        });
+        dispatch({ type: "GET_DATA_REGION", payload: newData });
       })
       .catch(() => dispatch({ type: "SET_LOADING", payload: false }));
   }, []);
