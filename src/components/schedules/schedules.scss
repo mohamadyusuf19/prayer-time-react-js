@@ -2,31 +2,32 @@
   background: #fff;
   padding-bottom: 10px;
   .title-schedule {
-    margin: 20px auto 0px auto;
+    margin: 20px auto 10px auto;
     color: #010101;
-    font-size: 28px;
+    font-size: 22px;
     font-weight: bold;
-    font-family: "Julius Sans One", sans-serif;
+    font-family: "Poppins";
     text-align: center;
   }
   .desc {
     color: #000;
     font-size: 18px;
-    font-family: "Julius Sans One", sans-serif;
+    font-family: "Poppins";
     text-align: center;
     margin: 20px 20px 60px 20px;
   }
   .text-region-iftar {
     color: #000;
     font-size: 14px;
-    font-family: "Julius Sans One", sans-serif;
+    font-family: "Poppins";
     text-align: center;
     margin: 0px;
   }
   .table {
     margin: 10px 0px 60px 0px;
+    font-family: "Poppins";
     @media (max-width: 600px) {
-      overflow: auto;
+      // overflow: auto;
       white-space: nowrap;
       background: white;
     }

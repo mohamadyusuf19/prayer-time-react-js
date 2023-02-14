@@ -8,6 +8,7 @@ import { SchedulesProvider } from "./context/schedulesPrayerContext";
 import isEmpty from "lodash/isEmpty";
 import { fetchRegion, fetchProvince } from "./services/FetchRegion";
 import { OnFocusProvider } from "./context/onFocusMapContext";
+import { Provider } from "jotai";
 
 const initialState = {
   data: [],
@@ -114,11 +115,13 @@ function App() {
     }
   }, []);
   return (
-    <SchedulesProvider value={{ state, dispatch }}>
-      <OnFocusProvider>
-        <Routes />
-      </OnFocusProvider>
-    </SchedulesProvider>
+    <Provider>
+      <SchedulesProvider value={{ state, dispatch }}>
+        <OnFocusProvider>
+          <Routes />
+        </OnFocusProvider>
+      </SchedulesProvider>
+    </Provider>
   );
 }
 

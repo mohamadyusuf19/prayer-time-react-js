@@ -7,7 +7,7 @@
   height: 115vh;
   padding-bottom: 20px;
   .inline-wrapper-home {
-    padding-top: 20px;
+    // padding-top: 20px;
     background: #fff;
     justify-content: center;
     height: 115vh;
@@ -28,48 +28,46 @@
         font-weight: bold !important;
         font-weight: bold;
         color: #fff;
-        font-family: "Julius Sans One", sans-serif;
+
         margin: 0px 0px 0px 0px;
       }
       .text-region-iftar {
         font-size: 15px;
         font-weight: bold;
         color: #fff;
-        font-family: "Julius Sans One", sans-serif;
+
         margin: 0px 0px 30px 0px;
       }
       .text-date-iftar {
         font-size: 15px;
-        font-family: "Julius Sans One", sans-serif;
+
         color: #fff;
         margin: 5px 0px;
       }
       .text-date-iftar-hijri {
         font-size: 15px;
         color: #fff;
-        font-family: "Julius Sans One", sans-serif;
+
         margin: 0px;
       }
       .text-time-iftar {
         font-size: 40px;
         color: #fff;
         font-weight: bold;
-        font-family: "Julius Sans One", sans-serif;
+
         margin: 0px;
       }
     }
     .title-schedule {
-      margin: 40px auto 20px auto;
+      margin: 0px auto 20px auto;
       color: #000;
-      font-size: 30px;
+      font-size: 22px;
       font-weight: bold;
-      font-family: "Julius Sans One", sans-serif;
       text-align: center;
     }
     .desc {
       color: #000;
       font-size: 20px;
-      font-family: "Julius Sans One", sans-serif;
       text-align: center;
       margin: 20px 20px 60px 20px;
     }
@@ -77,45 +75,70 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 3px 50px;
+      padding: 3px 20px;
       box-sizing: border-box;
       margin: 10px 20px;
       border-radius: 5px;
+      .text-time-active {
+        color: #055a91;
+        font-size: 16px;
+        font-weight: bolder;
+        margin: 0px;
+      }
       .text-time {
         color: #000;
-        font-size: 20px;
-        font-family: "Julius Sans One", sans-serif;
+        font-size: 16px;
         font-weight: 600;
         margin: 0px;
       }
+      .text-date-active {
+        color: #055a91;
+        font-size: 16px;
+        margin: 0px;
+        font-weight: bolder;
+      }
       .text-date {
         color: #000;
-        font-size: 20px;
-        font-family: "Julius Sans One", sans-serif;
+        font-size: 16px;
         margin: 0px;
+      }
+      .next {
+        color: #fff;
       }
     }
     .wrapper-time-active {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 3px 50px;
+      padding: 3px 20px;
       box-sizing: border-box;
       margin: 10px 20px;
       border-radius: 5px;
       background: linear-gradient(to right, #055a91, rgba(50, 160, 160, 0.938));
+      .text-time-active {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0px;
+      }
       .text-time {
         color: #fff;
-        font-size: 20px;
-        font-family: "Julius Sans One", sans-serif;
+        font-size: 16px;
         font-weight: 600;
+        margin: 0px;
+      }
+      .text-date-active {
+        color: #fff;
+        font-size: 16px;
         margin: 0px;
       }
       .text-date {
         color: #fff;
-        font-size: 20px;
-        font-family: "Julius Sans One", sans-serif;
+        font-size: 16px;
         margin: 0px;
+      }
+      .next {
+        color: #fff;
       }
     }
     .wrapper-time-skeleton {

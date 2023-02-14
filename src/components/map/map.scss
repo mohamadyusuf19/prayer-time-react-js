@@ -1,20 +1,18 @@
 .wrapper-maps {
   background: #fff;
-  padding-top: 20px;
+  padding-bottom: 20px;
   .title-schedule {
-    margin: 0px auto 20px auto;
+    margin: 20px auto 20px auto;
     color: #010101;
-    font-size: 28px;
+    font-size: 22px;
     font-weight: bold;
-    font-family: "Julius Sans One", sans-serif;
     text-align: center;
   }
   .desc {
     color: #000;
-    font-size: 15px;
-    font-family: "Julius Sans One", sans-serif;
+    font-size: 14px;
     text-align: center;
-    margin: 20px 20px 60px 20px;
+    margin: 20px;
   }
   .wrapper-input {
     padding: 0px 20px;
@@ -24,15 +22,13 @@
       z-index: 10 !important;
     }
   }
-}
-
-.wrapper-skeleton {
-  padding: 20px;
-}
-
-.leaflet-container {
-  height: 400px !important;
-  width: 90% !important;
-  margin: 30px auto 80px auto;
-  z-index: 1 !important;
+  .wrapper-skeleton {
+    padding: 20px;
+  }
+  .leaflet-container {
+    height: 400px !important;
+    width: 90% !important;
+    margin: 30px auto 80px auto;
+    z-index: 1 !important;
+  }
 }

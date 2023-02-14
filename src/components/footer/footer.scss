@@ -1,7 +1,8 @@
 .wrapper-footer {
   margin: 0;
   .footer {
-    background: linear-gradient(to right, #055a91, rgba(50, 160, 160, 0.938));
+    // background: linear-gradient(to right, #055a91, rgba(50, 160, 160, 0.938));
+    background: #fff;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     padding: 12px;
@@ -12,15 +13,13 @@
     width: 100%;
     z-index: 10;
     .icon {
-      font-size: 14px;
       text-align: center;
-      color: #fff;
-      font-family: "Julius Sans One", sans-serif;
+      color: #055a91;
     }
-    .active-icon {
-      font-size: 18px;
-      color: linear-gradient(to right, #055a91, rgba(50, 160, 160, 0.938));
-    }
+    // .active-icon {
+    //   font-size: 18px;
+    //   color: linear-gradient(to right, #055a91, rgba(50, 160, 160, 0.938));
+    // }
     @media (min-width: 600px) {
       width: 450px;
     }

@@ -1,10 +1,10 @@
 import React from "react";
-
-import "./schedules.scss";
-import { FaMapMarker, FaRegCalendarAlt } from "react-icons/fa";
 import Skeleton from "react-loading-skeleton";
 import TableManual from "../table/Table";
 import { formatMonth } from "../../utils/FormatDate";
+import { Calendar2, Location } from "iconsax-react";
+
+import "./schedules.scss";
 
 const Schedules = ({ dataSource, region, loading }) => {
   const date = new Date();
@@ -12,11 +12,11 @@ const Schedules = ({ dataSource, region, loading }) => {
     <div className='wrapper-schedules'>
       <p className='title-schedule'>Jadwal Sholat</p>
       <p className='text-region-iftar'>
-        <FaRegCalendarAlt /> Bulan {formatMonth()[date.getMonth()]} Tahun{" "}
-        {date.getFullYear()}
+        <Calendar2 size='18' color='#055a91' variant='Bulk' />{" "}
+        {formatMonth()[date.getMonth()]} {date.getFullYear()}
       </p>
       <p className='text-region-iftar'>
-        <FaMapMarker /> {region}
+        <Location size='18' color='#055a91' variant='Bulk' /> {region}
       </p>
       {loading ? (
         <Skeleton width={"100%"} height={400} />

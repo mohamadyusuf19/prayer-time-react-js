@@ -9,8 +9,10 @@ import { formatDay } from "../utils/FormatDate";
 
 const HomeContainer = () => {
   window.scrollTo(0, 0);
+
   const date = new Date();
   const formatDate = moment(date).format("DD-MM-YYYY");
+
   return (
     <Layout>
       <SchedulesConsumer>
@@ -40,7 +42,7 @@ const HomeContainer = () => {
               date={`${formatDay(newData[0].date.gregorian.weekday.en)}, ${
                 newData[0].date.readable
               } M`}
-              dateRamadhan={`${newData[0].date.hijri.day} ${newData[0].date.hijri.month.en} ${newData[0].date.hijri.year} H`}
+              dateHijri={`${newData[0].date.hijri.day} ${newData[0].date.hijri.month.en} ${newData[0].date.hijri.year} H`}
             />
           );
         }}
