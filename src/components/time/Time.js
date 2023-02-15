@@ -21,14 +21,20 @@ const conditionalTime = (prayerTime) => {
     case "Syuruq":
       return {
         isMosqueDay: true,
-        skyBackground: "linear-gradient(180deg, #46bbef 0% ,#b1e5fd 100%)",
+        skyBackground: "linear-gradient(180deg, #0e7ed3 0% ,#b1e5fd 100%)",
         sunPosition: 0,
       };
     case "Dhuha":
       return {
         isMosqueDay: true,
-        skyBackground: "linear-gradient(180deg, #46bbef 0% ,#b1e5fd 100%)",
-        sunPosition: 40,
+        skyBackground: "linear-gradient(180deg, #0e7ed3 0% ,#b1e5fd 100%)",
+        sunPosition: 60,
+      };
+    case "AkhirDhuha":
+      return {
+        isMosqueDay: true,
+        skyBackground: "linear-gradient(180deg, #0e7ed3 0% ,#b1e5fd 100%)",
+        sunPosition: 100,
       };
     case "Dzuhur":
       return {
@@ -65,8 +71,10 @@ const conditionalHours = (hour) => {
     return "Subuh";
   } else if (hour >= 6 && hour <= 7) {
     return "Syuruq";
-  } else if (hour >= 8 && hour <= 11) {
+  } else if (hour >= 8 && hour <= 9) {
     return "Dhuha";
+  } else if (hour >= 10 && hour <= 11) {
+    return "AkhirDhuha";
   } else if (hour >= 12 && hour <= 14) {
     return "Dzuhur";
   } else if (hour >= 15 && hour <= 16) {

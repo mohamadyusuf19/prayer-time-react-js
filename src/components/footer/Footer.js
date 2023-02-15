@@ -29,7 +29,7 @@ const Footer = () => {
               color='#055a91'
               variant={location.pathname === "/amalan" ? "Bulk" : "TwoTone"}
             />
-            <p style={{ margin: 0, fontSize: 11 }}>Amalan</p>
+            <p style={{ margin: 0, fontSize: 11 }}>Ibadah</p>
           </div>
         </NavLink>
         <NavLink className='icon' to='/maps' activeClassName='active-icon'>

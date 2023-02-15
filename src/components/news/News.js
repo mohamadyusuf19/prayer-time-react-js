@@ -214,6 +214,11 @@ const News = ({ dateNow }) => {
           </div>
         );
       })}
+      <p className='notes'>
+        Catatan : <br />
+        jadwal ibadah dapat disesuaikan dengan waktu di daerahnya masing -
+        masing
+      </p>
     </div>
   );
 };

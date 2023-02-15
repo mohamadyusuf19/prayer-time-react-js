@@ -12,11 +12,22 @@ const Schedules = ({ dataSource, region, loading }) => {
     <div className='wrapper-schedules'>
       <p className='title-schedule'>Jadwal Sholat</p>
       <p className='text-region-iftar'>
-        <Calendar2 size='18' color='#055a91' variant='Bulk' />{" "}
+        <Calendar2
+          size='18'
+          color='#055a91'
+          variant='Bulk'
+          style={{ marginRight: 3 }}
+        />{" "}
         {formatMonth()[date.getMonth()]} {date.getFullYear()}
       </p>
       <p className='text-region-iftar'>
-        <Location size='18' color='#055a91' variant='Bulk' /> {region}
+        <Location
+          size='18'
+          color='#055a91'
+          variant='Bulk'
+          style={{ marginRight: 3 }}
+        />{" "}
+        {region}
       </p>
       {loading ? (
         <Skeleton width={"100%"} height={400} />

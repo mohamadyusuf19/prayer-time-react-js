@@ -14,14 +14,14 @@ const initialState = {
   data: [],
   region: isEmpty(localStorage.getItem("region"))
     ? {
-        value: "KABUPATEN NGANJUK",
-        label: "KABUPATEN NGANJUK",
+        value: "Kabupaten Nganjuk",
+        label: "Kabupaten Nganjuk",
       }
     : JSON.parse(localStorage.getItem("region")),
   province: isEmpty(localStorage.getItem("province"))
     ? {
         value: 35,
-        label: "JAWA TIMUR",
+        label: "Jawa Timur",
       }
     : JSON.parse(localStorage.getItem("province")),
   loading: false,
