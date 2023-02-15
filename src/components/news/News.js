@@ -5,14 +5,9 @@ import "./news.scss";
 import { useHistory } from "react-router";
 import { prayerActivities } from "../../utils/data";
 import { ArrowCircleRight } from "iconsax-react";
-import { useAtom } from "jotai";
-import { prayerAtom } from "../../store/prayer.store";
-import { isNil } from "lodash";
 
 const News = ({ dateNow }) => {
   const history = useHistory();
-
-  const [, setPrayer] = useAtom(prayerAtom);
 
   const dateNowHijri = isEmpty(dateNow) ? null : dateNow[0].date.hijri.day;
   const dayNow = isEmpty(dateNow) ? null : dateNow[0].date.gregorian.weekday.en;
@@ -191,11 +186,6 @@ const News = ({ dateNow }) => {
               onClick={() => {
                 if (prayerActivity.isNextPage) {
                   history.push(`${prayerActivity.page}`);
-                  if (isNil(prayerActivity.prayer)) {
-                    return null;
-                  } else {
-                    setPrayer(`${prayerActivity.prayer}`);
-                  }
                 }
               }}>
               <p className='name'>

@@ -9,7 +9,7 @@ import {
 } from "../../utils/FormatDate";
 import Time from "../time/Time";
 import { useHistory } from "react-router";
-import { prayerAtom } from "../../store/prayer.store";
+import { isRealTimeAtom, prayerAtom } from "../../store/prayer.store";
 import { useAtom } from "jotai";
 
 const Home = ({
@@ -28,6 +28,7 @@ const Home = ({
   const history = useHistory();
 
   const [prayer, setPrayer] = useAtom(prayerAtom);
+  const [, setIsRealTime] = useAtom(isRealTimeAtom);
 
   const compareDate = (firstTime, lastTime) => {
     // eslint-disable-next-line no-unused-expressions
@@ -106,7 +107,10 @@ const Home = ({
           ) : (
             <>
               <div
-                onClick={() => setPrayer("Subuh")}
+                onClick={() => {
+                  setPrayer("Subuh");
+                  setIsRealTime(false);
+                }}
                 className={
                   compareDateOr(isya, subuh)
                     ? "wrapper-time-active"
@@ -118,7 +122,10 @@ const Home = ({
                 <p className={isActiveDate("Subuh")}>{subuh}</p>
               </div>
               <div
-                onClick={() => setPrayer("Dzuhur")}
+                onClick={() => {
+                  setPrayer("Dzuhur");
+                  setIsRealTime(false);
+                }}
                 className={
                   compareDate(subuh, zuhur)
                     ? "wrapper-time-active"
@@ -130,7 +137,10 @@ const Home = ({
                 <p className={isActiveDate("Dzuhur")}>{zuhur}</p>
               </div>
               <div
-                onClick={() => setPrayer("Ashar")}
+                onClick={() => {
+                  setPrayer("Ashar");
+                  setIsRealTime(false);
+                }}
                 className={
                   compareDate(zuhur, ashar)
                     ? "wrapper-time-active"
@@ -142,7 +152,10 @@ const Home = ({
                 <p className={isActiveDate("Ashar")}>{ashar}</p>
               </div>
               <div
-                onClick={() => setPrayer("Maghrib")}
+                onClick={() => {
+                  setPrayer("Maghrib");
+                  setIsRealTime(false);
+                }}
                 className={
                   compareDate(ashar, magrib)
                     ? "wrapper-time-active"
@@ -154,7 +167,10 @@ const Home = ({
                 <p className={isActiveDate("Maghrib")}>{magrib}</p>
               </div>
               <div
-                onClick={() => setPrayer("Isya")}
+                onClick={() => {
+                  setPrayer("Isya");
+                  setIsRealTime(false);
+                }}
                 className={
                   compareDate(magrib, isya)
                     ? "wrapper-time-active"

@@ -2,7 +2,7 @@ import { useAtom } from "jotai";
 import { isNil } from "lodash";
 import moment from "moment/moment";
 import React, { useEffect, useState } from "react";
-import { prayerAtom } from "../../store/prayer.store";
+import { isRealTimeAtom, prayerAtom } from "../../store/prayer.store";
 
 import "./time.scss";
 
@@ -90,6 +90,7 @@ const Time = ({ dateHijri, dateMasehi }) => {
   const hour = moment().format("HH");
 
   const [prayer, setPrayer] = useAtom(prayerAtom);
+  const [isRealTime, setIsRealTime] = useAtom(isRealTimeAtom);
 
   const [time, setTime] = useState(new Date());
 
@@ -97,6 +98,10 @@ const Time = ({ dateHijri, dateMasehi }) => {
     if (isNil(prayer)) {
       setPrayer(conditionalHours(hour));
     }
+  }, []);
+
+  useEffect(() => {
+    setIsRealTime(true);
   }, []);
 
   useEffect(() => {
@@ -109,6 +114,9 @@ const Time = ({ dateHijri, dateMasehi }) => {
 
   const tick = () => {
     setTime(new Date());
+    if (isRealTime) {
+      setPrayer(conditionalHours(hour));
+    }
   };
 
   return (
