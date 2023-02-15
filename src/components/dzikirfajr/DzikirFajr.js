@@ -8,6 +8,7 @@ import "./dzikirfajr.scss";
 
 const DzikirFajr = () => {
   const history = useHistory();
+  window.scrollTo(0, 0);
   return (
     <Layout>
       <div className='wrapper-dzikir'>

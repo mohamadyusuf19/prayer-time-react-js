@@ -1,6 +1,49 @@
 .wrapper-news {
-  padding: 20px 0px 50px 0px;
+  padding: 20px 0px 80px 0px;
   background: #fff;
+  .wrapper-timeline {
+    display: flex;
+    margin-bottom: 10px;
+    .wrapper-initial-time {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 90px;
+      width: 100px;
+      .initial-time {
+        font-size: 14px;
+        color: #055a91;
+        font-weight: bold;
+      }
+    }
+    .timeline-card {
+      padding: 12px;
+      box-sizing: border-box;
+      box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+      background: #fff;
+      height: 80px;
+      width: 280px;
+      .name {
+        font-size: 14px;
+        font-weight: bold;
+        margin: 0px;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .note {
+        font-size: 10px;
+        color: #4f4f4f;
+        margin: 0px;
+      }
+    }
+  }
+  .notes {
+    font-style: italic;
+    padding: 20px;
+    font-size: 12px;
+  }
   .flex {
     display: flex;
     align-items: center;
@@ -21,7 +64,7 @@
       .title {
         font-size: 13px;
         font-weight: bold;
-        font-family: "Julius Sans One", sans-serif;
+
         margin: 0px;
       }
       &:hover {
@@ -39,14 +82,12 @@
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
     .text-title {
       font-size: 20px;
-      font-family: "Julius Sans One", sans-serif;
       color: #fff;
       margin: 5px 0px;
     }
     .text-date-iftar-hijri {
       font-size: 13px;
       color: #fff;
-      font-family: "Julius Sans One", sans-serif;
       margin: 0px;
     }
   }

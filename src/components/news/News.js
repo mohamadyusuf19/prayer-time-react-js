@@ -2,11 +2,13 @@ import React from "react";
 import isEmpty from "lodash/isEmpty";
 
 import "./news.scss";
-import { FaMoon, FaSun } from "react-icons/fa";
 import { useHistory } from "react-router";
+import { prayerActivities } from "../../utils/data";
+import { ArrowCircleRight } from "iconsax-react";
 
 const News = ({ dateNow }) => {
   const history = useHistory();
+
   const dateNowHijri = isEmpty(dateNow) ? null : dateNow[0].date.hijri.day;
   const dayNow = isEmpty(dateNow) ? null : dateNow[0].date.gregorian.weekday.en;
   const monthNowHijri = isEmpty(dateNow)
@@ -15,7 +17,7 @@ const News = ({ dateNow }) => {
   const yearHijri = isEmpty(dateNow) ? null : dateNow[0].date.hijri.year;
   return (
     <div className='wrapper-news'>
-      {monthNowHijri === 10 && dateNowHijri === "01" ? (
+      {/* {monthNowHijri === 10 && dateNowHijri === "01" ? (
         <div className='card'>
           <p className='text-title'>
             Selamat Hari Raya Idul Fitri {yearHijri} H
@@ -172,7 +174,41 @@ const News = ({ dateNow }) => {
             Puasa Arafah tanggal 9 Dhulhijjah
           </p>
         </div>
-      ) : null}
+      ) : null} */}
+      {prayerActivities.map((prayerActivity, idx) => {
+        return (
+          <div className='wrapper-timeline' key={idx}>
+            <div className='wrapper-initial-time'>
+              <p className='initial-time'>{prayerActivity.initialTime}</p>
+            </div>
+            <div
+              className='timeline-card'
+              onClick={() => {
+                if (prayerActivity.isNextPage) {
+                  history.push(`${prayerActivity.page}`);
+                }
+              }}>
+              <p className='name'>
+                {prayerActivity.name}
+                {prayerActivity.isNextPage && (
+                  <ArrowCircleRight
+                    size='21'
+                    color='#055a91'
+                    variant='Bulk'
+                    style={{ marginLeft: 3 }}
+                  />
+                )}
+              </p>
+              <p className='note'>{prayerActivity.note}</p>
+            </div>
+          </div>
+        );
+      })}
+      <p className='notes'>
+        Catatan : <br />
+        jadwal ibadah dapat disesuaikan dengan waktu di daerahnya masing -
+        masing
+      </p>
     </div>
   );
 };

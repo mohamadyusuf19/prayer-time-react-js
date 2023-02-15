@@ -8,19 +8,20 @@ import { SchedulesProvider } from "./context/schedulesPrayerContext";
 import isEmpty from "lodash/isEmpty";
 import { fetchRegion, fetchProvince } from "./services/FetchRegion";
 import { OnFocusProvider } from "./context/onFocusMapContext";
+import { Provider } from "jotai";
 
 const initialState = {
   data: [],
   region: isEmpty(localStorage.getItem("region"))
     ? {
-        value: "KABUPATEN NGANJUK",
-        label: "KABUPATEN NGANJUK",
+        value: "Kabupaten Nganjuk",
+        label: "Kabupaten Nganjuk",
       }
     : JSON.parse(localStorage.getItem("region")),
   province: isEmpty(localStorage.getItem("province"))
     ? {
         value: 35,
-        label: "JAWA TIMUR",
+        label: "Jawa Timur",
       }
     : JSON.parse(localStorage.getItem("province")),
   loading: false,
@@ -114,11 +115,13 @@ function App() {
     }
   }, []);
   return (
-    <SchedulesProvider value={{ state, dispatch }}>
-      <OnFocusProvider>
-        <Routes />
-      </OnFocusProvider>
-    </SchedulesProvider>
+    <Provider>
+      <SchedulesProvider value={{ state, dispatch }}>
+        <OnFocusProvider>
+          <Routes />
+        </OnFocusProvider>
+      </SchedulesProvider>
+    </Provider>
   );
 }
 

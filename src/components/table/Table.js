@@ -16,9 +16,9 @@ const TableManual = ({ data }) => {
         <tr className='title-table'>
           <th style={{ fontSize: "15px" }}>Tanggal</th>
           <th style={{ fontSize: "15px" }}>Subuh</th>
-          <th style={{ fontSize: "15px" }}>Zuhur</th>
+          <th style={{ fontSize: "15px" }}>Dzuhur</th>
           <th style={{ fontSize: "15px" }}>Ashar</th>
-          <th style={{ fontSize: "15px" }}>Magrib</th>
+          <th style={{ fontSize: "15px" }}>Maghrib</th>
           <th style={{ fontSize: "15px" }}>Isya'</th>
         </tr>
       </thead>

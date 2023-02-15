@@ -1,6 +1,5 @@
 import React from "react";
 import Skeleton from "react-loading-skeleton";
-import { FaMapMarker } from "react-icons/fa";
 
 import "./home.scss";
 import {
@@ -10,6 +9,8 @@ import {
 } from "../../utils/FormatDate";
 import Time from "../time/Time";
 import { useHistory } from "react-router";
+import { isRealTimeAtom, prayerAtom } from "../../store/prayer.store";
+import { useAtom } from "jotai";
 
 const Home = ({
   subuh,
@@ -18,13 +19,17 @@ const Home = ({
   magrib,
   isya,
   date,
-  dateRamadhan,
+  dateHijri,
   region,
   loading,
   dateNow,
 }) => {
   const newDate = new Date();
   const history = useHistory();
+
+  const [prayer, setPrayer] = useAtom(prayerAtom);
+  const [, setIsRealTime] = useAtom(isRealTimeAtom);
+
   const compareDate = (firstTime, lastTime) => {
     // eslint-disable-next-line no-unused-expressions
     return (
@@ -43,6 +48,7 @@ const Home = ({
         Date.parse(`${unixTime(dateNow)} ${getHourAndMinutes(lastTime)}:00`)
     );
   };
+
   const conditional = () => {
     if (compareDateOr(isya, subuh)) {
       return <Time prayerTime='Subuh' realTime={subuh} />;
@@ -60,10 +66,16 @@ const Home = ({
       return <Time prayerTime='Isya' realTime={isya} />;
     }
   };
+
+  const isActiveTime = (params) =>
+    prayer === params ? "text-time-active" : "text-time";
+  const isActiveDate = (params) =>
+    prayer === params ? "text-date-active" : "text-date";
+
   return (
     <div className='wrapper-home'>
       <div className='inline-wrapper-home'>
-        <div
+        {/* <div
           className='card'
           onClick={() => history.push("/maps")}
           style={{ cursor: "pointer" }}>
@@ -74,66 +86,104 @@ const Home = ({
             <Skeleton count={2} />
           ) : (
             <div>
-              <p className='text-date-iftar-hijri'>{dateRamadhan}</p>
+              <p className='text-date-iftar-hijri'>{dateHijri}</p>
               <p className='text-date-iftar'>{date}</p>
             </div>
           )}
+        </div> */}
+        <Time dateHijri={dateHijri} dateMasehi={date} />
+        <div
+          style={{
+            zIndex: 10,
+            background: "#fff",
+            position: "relative",
+            paddingTop: 20,
+          }}>
+          <p className='title-schedule'>Jadwal Sholat</p>
+          {loading ? (
+            <div className='wrapper-time-skeleton'>
+              <Skeleton count={5} height={40} />
+            </div>
+          ) : (
+            <>
+              <div
+                onClick={() => {
+                  setPrayer("Subuh");
+                  setIsRealTime(false);
+                }}
+                className={
+                  compareDateOr(isya, subuh)
+                    ? "wrapper-time-active"
+                    : "wrapper-time"
+                }>
+                <p className={isActiveTime("Subuh")}>
+                  Subuh<span className='next'> (selanjutnya)</span>
+                </p>
+                <p className={isActiveDate("Subuh")}>{subuh}</p>
+              </div>
+              <div
+                onClick={() => {
+                  setPrayer("Dzuhur");
+                  setIsRealTime(false);
+                }}
+                className={
+                  compareDate(subuh, zuhur)
+                    ? "wrapper-time-active"
+                    : "wrapper-time"
+                }>
+                <p className={isActiveTime("Dzuhur")}>
+                  Dzuhur<span className='next'> (selanjutnya)</span>
+                </p>
+                <p className={isActiveDate("Dzuhur")}>{zuhur}</p>
+              </div>
+              <div
+                onClick={() => {
+                  setPrayer("Ashar");
+                  setIsRealTime(false);
+                }}
+                className={
+                  compareDate(zuhur, ashar)
+                    ? "wrapper-time-active"
+                    : "wrapper-time"
+                }>
+                <p className={isActiveTime("Ashar")}>
+                  Ashar<span className='next'> (selanjutnya)</span>
+                </p>
+                <p className={isActiveDate("Ashar")}>{ashar}</p>
+              </div>
+              <div
+                onClick={() => {
+                  setPrayer("Maghrib");
+                  setIsRealTime(false);
+                }}
+                className={
+                  compareDate(ashar, magrib)
+                    ? "wrapper-time-active"
+                    : "wrapper-time"
+                }>
+                <p className={isActiveTime("Maghrib")}>
+                  Maghrib<span className='next'> (selanjutnya)</span>
+                </p>
+                <p className={isActiveDate("Maghrib")}>{magrib}</p>
+              </div>
+              <div
+                onClick={() => {
+                  setPrayer("Isya");
+                  setIsRealTime(false);
+                }}
+                className={
+                  compareDate(magrib, isya)
+                    ? "wrapper-time-active"
+                    : "wrapper-time"
+                }>
+                <p className={isActiveTime("Isya")}>
+                  Isya'<span className='next'> (selanjutnya)</span>
+                </p>
+                <p className={isActiveDate("Isya")}>{isya}</p>
+              </div>
+            </>
+          )}
         </div>
-        {conditional()}
-        <p className='title-schedule'>Jadwal Sholat</p>
-        {loading ? (
-          <div className='wrapper-time-skeleton'>
-            <Skeleton count={5} height={40} />
-          </div>
-        ) : (
-          <>
-            <div
-              className={
-                compareDateOr(isya, subuh)
-                  ? "wrapper-time-active"
-                  : "wrapper-time"
-              }>
-              <p className='text-time'>Subuh</p>
-              <p className='text-date'>{subuh}</p>
-            </div>
-            <div
-              className={
-                compareDate(subuh, zuhur)
-                  ? "wrapper-time-active"
-                  : "wrapper-time"
-              }>
-              <p className='text-time'>Zuhur</p>
-              <p className='text-date'>{zuhur}</p>
-            </div>
-            <div
-              className={
-                compareDate(zuhur, ashar)
-                  ? "wrapper-time-active"
-                  : "wrapper-time"
-              }>
-              <p className='text-time'>Ashar</p>
-              <p className='text-date'>{ashar}</p>
-            </div>
-            <div
-              className={
-                compareDate(ashar, magrib)
-                  ? "wrapper-time-active"
-                  : "wrapper-time"
-              }>
-              <p className='text-time'>Maghrib</p>
-              <p className='text-date'>{magrib}</p>
-            </div>
-            <div
-              className={
-                compareDate(magrib, isya)
-                  ? "wrapper-time-active"
-                  : "wrapper-time"
-              }>
-              <p className='text-time'>Isya'</p>
-              <p className='text-date'>{isya}</p>
-            </div>
-          </>
-        )}
       </div>
     </div>
   );

@@ -3,7 +3,7 @@
    License: none (public domain)
 */
 
-html,
+/* html,
 body,
 div,
 span,
@@ -92,7 +92,7 @@ video {
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article,
+/* article,
 aside,
 details,
 figcaption,
@@ -104,11 +104,12 @@ menu,
 nav,
 section {
   display: block;
-}
+} */
 body {
-  line-height: 1;
+  font-family: "Poppins" !important;
+  position: relative;
 }
-ol,
+/* ol,
 ul {
   list-style: none;
 }
@@ -122,14 +123,14 @@ q:before,
 q:after {
   content: "";
   content: none;
-}
-table {
+} */
+/* table {
   border-collapse: collapse;
   border-spacing: 0;
-}
+} */
 
 /* leaflet marker icon */
-.leaflet-marker-icon {
+/* .leaflet-marker-icon {
   height: 0px;
   width: 0px;
-}
+} */

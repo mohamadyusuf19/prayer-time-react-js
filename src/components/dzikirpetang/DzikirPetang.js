@@ -8,6 +8,7 @@ import "./dzikirpetang.scss";
 
 const DzikirPetang = () => {
   const history = useHistory();
+  window.scrollTo(0, 0);
   return (
     <Layout>
       <div className='wrapper-dzikir'>

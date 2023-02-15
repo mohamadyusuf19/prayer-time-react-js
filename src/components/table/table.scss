@@ -2,9 +2,13 @@
   border-collapse: collapse;
   width: 100%;
   background: rgb(241, 246, 243);
+  position: relative !important;
   .title-table {
     background: linear-gradient(to right, #055a91, rgba(50, 160, 160, 0.938));
     color: #fff;
+    position: sticky !important;
+    top: 0;
+    z-index: 10;
   }
   td,
   th {
