@@ -15,6 +15,7 @@ const TableManual = ({ data }) => {
       <thead>
         <tr className='title-table'>
           <th style={{ fontSize: "15px" }}>Tanggal</th>
+          <th style={{ fontSize: "15px" }}>Imsak</th>
           <th style={{ fontSize: "15px" }}>Subuh</th>
           <th style={{ fontSize: "15px" }}>Dzuhur</th>
           <th style={{ fontSize: "15px" }}>Ashar</th>
@@ -36,6 +37,7 @@ const TableManual = ({ data }) => {
                         margin: 0,
                       }}>{`${hijri.day} ${hijri.month.en} ${hijri.year}`}</p>
                   </td>
+                  <td>{item.timings.Imsak}</td>
                   <td>{item.timings.Fajr}</td>
                   <td>{item.timings.Dhuhr}</td>
                   <td>{item.timings.Asr}</td>

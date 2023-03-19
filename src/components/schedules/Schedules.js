@@ -29,6 +29,9 @@ const Schedules = ({ dataSource, region, loading }) => {
         />{" "}
         {region}
       </p>
+      <p style={{ textAlign: "center", marginTop: 8, fontSize: 12 }}>
+        Berdasarkan: Egyptian General Authority of Survey
+      </p>
       {loading ? (
         <Skeleton width={"100%"} height={400} />
       ) : (
