@@ -14,13 +14,13 @@ const TableManual = ({ data }) => {
     <table className='table-manual'>
       <thead>
         <tr className='title-table'>
-          <th style={{ fontSize: "15px" }}>Tanggal</th>
-          <th style={{ fontSize: "15px" }}>Imsak</th>
-          <th style={{ fontSize: "15px" }}>Subuh</th>
-          <th style={{ fontSize: "15px" }}>Dzuhur</th>
-          <th style={{ fontSize: "15px" }}>Ashar</th>
-          <th style={{ fontSize: "15px" }}>Maghrib</th>
-          <th style={{ fontSize: "15px" }}>Isya'</th>
+          <th style={{ fontSize: "10px" }}>Tanggal</th>
+          <th style={{ fontSize: "10px" }}>Imsak</th>
+          <th style={{ fontSize: "10px" }}>Subuh</th>
+          <th style={{ fontSize: "10px" }}>Dzuhur</th>
+          <th style={{ fontSize: "10px" }}>Ashar</th>
+          <th style={{ fontSize: "10px" }}>Maghrib</th>
+          <th style={{ fontSize: "10px" }}>Isya'</th>
         </tr>
       </thead>
       <tbody>
